@@ -1,18 +1,19 @@
 :root{
 	--font-size: 16px;
 
-	--font-h1:'Anton-Regular';
-	--font-h1-alt:'';
+	--font-h1:'Jost black', sans-serif;
+	--font-h2:'';
 	--font-p: 'inter regular';
+	--font-caption: '';
 
 }
 
 
 
-h1 {
-	font-size: calc(var(--font-size) * 5);
+h1 { 
+	font-size: calc(var(--font-size) * 15);
 	font-family: var(--font-h1);
-	color: #ff2a2a;
+	color: #000000;
 	/* padding: var(--text-padding); */
 }
 
@@ -44,7 +45,8 @@ h1 {
   font-family: 'Anton-Regular';
   src: url('fonts/Anton-Regular.woff2') format('woff2'),
        url('fonts/Anton-Regular.woff') format('woff'),
-       url('fonts/Anton-Regular.ttf') format('truetype');
+       url('fonts/Anton-Regular.ttf') format('truetype')
+			 url('fonts/Anton-Regular.otf') format('otf');
        font-weight: 400;
        font-display: swap;
        font-style: normal;
@@ -70,5 +72,8 @@ h1 {
        font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Jost:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Jost:wght@900&display=swap');
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Jost:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap'); */
 
