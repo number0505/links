@@ -2,19 +2,41 @@
 	--font-size: 16px;
 
 	--font-h1:'Jost black', sans-serif;
-	--font-h2:'';
-	--font-p: 'inter regular';
-	--font-caption: '';
+	--font-h2:'Jost black', sans-serif;
+	--font-p: 'inter', sans-serif;
+	--font-caption: 'inter', sans-serif; /* 굵기 어떻게 바꾸는데 */
 
 }
 
-
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
 
 h1 { 
-	font-size: calc(var(--font-size) * 15);
+	font-size: calc(var(--font-size) * 5);
 	font-family: var(--font-h1);
 	color: #000000;
 	/* padding: var(--text-padding); */
+}
+
+
+/* PIZZA HELL'S GATE */
+#P { top: 5vh; left: 10vw; }
+#I { top: 15vh; right: 20vw; }
+#Z1 { top: 40vh; left: 30vw; }
+#Z2 { bottom: 13vh; right: 30vw; }
+#A { bottom: 2vh; left: 20vw; }
+
+.letter {
+	font-size: calc(var(--font-size) * 10); 
+	font-family: var(--font-h1);
+	position: absolute;
 }
 
 
