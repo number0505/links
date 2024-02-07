@@ -1,6 +1,25 @@
+:root{
+	--font-size: 16px;
+
+	--font-h1:'Anton-Regular';
+	--font-h1-alt:'';
+	--font-p: 'inter regular';
+
+}
 
 
-/* TABLET TABLET TABLET TABLET TABLET */
+
+h1 {
+	font-size: calc(var(--font-size) * 5);
+	font-family: var(--font-h1);
+	color: #ff2a2a;
+	/* padding: var(--text-padding); */
+}
+
+
+
+
+/* TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET */
 
 @media (min-width: 768px) {
 	:root{
@@ -9,7 +28,7 @@
 }
 
 
-/* DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP */
+/* DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP */
 
 @media (min-width: 1280px) {
 	:root{
@@ -18,6 +37,38 @@
 }
 
 
-/* font font font font font family */ 
+/* FONT FONT FONT FONT FONT FONT FONT FONT FONT FONT */ 
+
+
+@font-face {
+  font-family: 'Anton-Regular';
+  src: url('fonts/Anton-Regular.woff2') format('woff2'),
+       url('fonts/Anton-Regular.woff') format('woff'),
+       url('fonts/Anton-Regular.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sharpie-Regular';
+  src: url('fonts/Sharpie-Regular.woff2') format('woff2'),
+       url('fonts/Sharpie-Regular.woff') format('woff'),
+       url('fonts/Sharpie-Regular.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sharpie-Bold';
+  src: url('fonts/Sharpie-Bold.woff2') format('woff2'),
+       url('fonts/Sharpie-Bold.woff') format('woff'),
+       url('fonts/Sharpie-Bold.ttf') format('truetype');
+       font-weight: 700;
+       font-display: swap;
+       font-style: normal;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Jost:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap');
+
