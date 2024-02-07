@@ -1,10 +1,15 @@
 :root{
 	--font-size: 16px;
 
+	--line-height: 150%;
+	--text-padding: 2% 0;
+
 	--font-h1:'Jost black', sans-serif;
 	--font-h2:'Jost black', sans-serif;
 	--font-p: 'inter', sans-serif;
 	--font-caption: 'inter', sans-serif; /* 굵기 어떻게 바꾸는데 */
+
+	
 
 }
 
@@ -15,7 +20,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	overflow: hidden;
+
 }
 
 h1 { 
@@ -36,9 +41,68 @@ h1 {
 .letter {
 	font-size: calc(var(--font-size) * 10); 
 	font-family: var(--font-h1);
-	position: absolute;
+	position: fixed;
 }
 
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+	height: 100vh;
+	margin: var(--font-size);
+
+}
+
+/*없애는거 고래중*/
+.image-wrapper { 
+	/* position: absolute; */
+	overflow: hidden;
+	transform: translateY(100%); /* 초기 위치 설정*/
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; 
+	aspect-ratio: 1 / 1;
+
+
+	position: static;
+	z-index: 1;
+}
+
+.pizza-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 200px;
+	height: 200px; 
+	background-color: red;
+	color: white; 
+	border-radius: 50%;
+	text-decoration: none; /* 링크 밑줄 제거 !! */
+
+	font-family: var(--font-p); 
+	font-size: calc(var(--font-size) * 1.25); 
+	text-align: center; 
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+footer {
+	position: fixed; 
+
+	right: 0; 
+	bottom: 0; 
+
+	padding: 10px; 
+
+	font-size: calc(var(--font-size) * .9);
+	font-family: var(--font-p);
+}
 
 
 
