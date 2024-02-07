@@ -1,0 +1,23 @@
+
+
+/* TABLET TABLET TABLET TABLET TABLET */
+
+@media (min-width: 768px) {
+	:root{
+
+	}
+}
+
+
+/* DESKTOP DESKTOP DESKTOP DESKTOP DESKTOP */
+
+@media (min-width: 1280px) {
+	:root{
+		
+	}
+}
+
+
+/* font font font font font family */ 
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Jost:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap');
