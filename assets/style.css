@@ -1,8 +1,7 @@
 :root{
 	--font-size: 16px;
 
-	--line-height: 150%;
-	--text-padding: 2% 0;
+	--line-height: 160%;
 
 	--font-h1:'Jost black', sans-serif;
 	--font-h2:'Jost black', sans-serif;
@@ -42,6 +41,7 @@ h1 {
 	font-size: calc(var(--font-size) * 10); 
 	font-family: var(--font-h1);
 	position: fixed;
+	z-index: -1; 
 }
 
 .container {
@@ -104,7 +104,20 @@ footer {
 	font-family: var(--font-p);
 }
 
+.content-box {
+	background-color: #f4d03f; 
+	color: #333; 
+	padding: 20px; 
+	margin: 20px auto; 
+	width: 80%; 
+	box-sizing: border-box; 
+	border-radius: 10px;
 
+	font-size: calc(var(--font-size)*1.2);
+	font-family: var(--font-p);
+	line-height: var(--line-height);
+
+}
 
 /* TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET */
 
