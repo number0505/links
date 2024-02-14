@@ -88,6 +88,8 @@ main {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: var(--gap);
+	margin-top: 200px;
+  margin-bottom: 80px; 
 }
 
 .blocks{
