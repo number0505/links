@@ -9,6 +9,7 @@ document.head.appendChild(markdownIt)
 // Okay, Are.na stuff!
 let channelSlug = 'pizza-by-the-york' // The “slug” is just the end of the URL
 
+
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
 	// Target some elements in your HTML:
@@ -25,26 +26,21 @@ let placeChannelInfo = (data) => {
 }
 
 
-
 // Then our big function for specific-block-type rendering:
 let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.getElementById('channel-blocks')
 
+
+	// console.log(block.class)
+
+
 	// Links!
 	if (block.class == 'Link') {
 		let linkItem =
 			`
-			<li>
-				<p><em>Link</em></p>
-				<picture>
-					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-					<img src="${ block.image.original.url }">
-				</picture>
+			<li class="block block-link">
 				<h3>${ block.title }</h3>
-				${ block.description_html }
-				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -52,7 +48,18 @@ let renderBlock = (block) => {
 
 	// Images!
 	else if (block.class == 'Image') {
-		// …up to you!
+		console.log(block)
+		let ImageItem =
+		`
+		<li class="block block-img">
+			<figure>
+				<img src="content/pizza.webp" alt="Image of New York Pizza">
+				<figcaption>caption</figcaption>
+			</figure>
+		</li>
+		`
+		channelBlocks.insertAdjacentHTML('beforeend', ImageItem)
+
 	}
 
 	// Text!
@@ -154,8 +161,32 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			renderBlock(block) // Pass the single block data to the render function
 		})
 
-		// Also display the owner and collaborators:
-		let channelUsers = document.getElementById('channel-users') // Show them together
-		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
-		renderUser(data.user, channelUsers)
+		// // Also display the owner and collaborators:
+		// let channelUsers = document.getElementById('channel-users') // Show them together
+		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
+		// renderUser(data.user, channelUsers)
 	})
+
+
+
+// 	markdownIt.onload = function() {
+//     // markdown-it 로드 완료 후 실행할 코드
+
+//     // 데이터 불러오기 및 처리 로직
+//     fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
+//       .then((response) => response.json())
+//       .then((data) => {
+//           console.log(data);
+//           placeChannelInfo(data);
+
+//           data.contents.reverse().forEach((block) => {
+//               renderBlock(block);
+//           });
+
+//           let channelUsers = document.getElementById('channel-users');
+//           data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers));
+//           renderUser(data.user, channelUsers);
+//       });
+// };
+// document.head.appendChild(markdownIt);
+

@@ -1,6 +1,8 @@
 /* FONT FONT FONT FONT FONT FONT FONT FONT FONT FONT */ 
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Jost:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Jost:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap');
+
 
 
 @font-face {
@@ -35,8 +37,6 @@
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Jost:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap');
-
 
 
 
@@ -62,13 +62,13 @@
 
 	--background: #EFDFB6;
 
-	--column: 1;
+	--column: 3;
 
 }
 header{
 	position: fixed;
 	padding: var(--gap);
-	background: linear-gradient(to bottom, #E3B67A, #EFDFB6);
+	/* background: linear-gradient(to bottom, #E3B67A, transparent); */
   top: 0;
   left: 0;
   width: 100%;
@@ -110,11 +110,6 @@ footer {
   z-index: 5;
 }
 
-.blocks{
-	display: grid;
-	grid-template-columns: repeat(var(--column), minmax(0, 1fr));
-	gap: var(--gap);
-}
 
 h1 { 
 	font-size: var(--font-size-h1);
@@ -186,8 +181,15 @@ aside {
 /* .blocks { 
 	position: absolute;
 	overflow: hidden;
-	transform: translateY(100%); /* 초기 위치 설정*/
-} */
+	transform: translateY(100%);
+}
+ */
+
+.blocks{
+	display: grid;
+	grid-template-columns: repeat(var(--column), minmax(0, 1fr));
+	gap: var(--gap);
+}
 
 img {
 	width: 100%;
