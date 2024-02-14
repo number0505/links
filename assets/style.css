@@ -70,7 +70,6 @@ header{
   top: 0;
   left: 0;
   width: 100%;
-	height: calc(var(--font-size)*100);
   z-index: 3;
 }
 
@@ -106,7 +105,6 @@ footer {
 	right: 0; 
 	bottom: 0; 
   width: 100%;
-	height: calc(val(--font-size)*10);
   z-index: 5;
 }
 
@@ -119,7 +117,7 @@ footer {
 h1 { 
 	font-size: var(--font-size-h1);
 	font-family: var(--font-h1);
-	color: val(--color-black);
+	color: var(--color-black);
 	/* padding: var(--text-padding); */
 	font-display: uppercase;
 	line-height: var(--line-height);
@@ -156,7 +154,8 @@ aside {
 .letter {
 	font-size: calc(var(--font-size) * 10); 
 	font-family: var(--font-h1);
-	color: val(--color-red);
+	color: var(--color-black);
+	opacity: 50%;
 
 	position: fixed;
 	z-index: -1; 
@@ -174,7 +173,7 @@ aside {
 }
 
 /*없애는거 고래중*/
-.image-wrapper { 
+.blo { 
 	/* position: absolute; */
 	overflow: hidden;
 	transform: translateY(100%); /* 초기 위치 설정*/
@@ -190,7 +189,7 @@ img {
 	z-index: 1;
 }
 
-.pizza-link {
+.block-link {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -211,14 +210,13 @@ img {
 
 
 
-.content-box {
+.block-txt {
 	background-color: #f4d03f; 
 	color: #333; 
 	padding: 20px; 
 	margin: 20px auto; 
-	width: 80%; 
+	width: 100%; 
 	box-sizing: border-box; 
-	border-radius: 10px;
 
 	font-size: calc(var(--font-size)*1.2);
 	font-family: var(--font-p);
