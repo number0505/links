@@ -1,7 +1,52 @@
+/* FONT FONT FONT FONT FONT FONT FONT FONT FONT FONT */ 
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Jost:wght@900&display=swap');
+
+
+@font-face {
+  font-family: 'Anton-Regular';
+  src: url('fonts/Anton-Regular.woff2') format('woff2'),
+       url('fonts/Anton-Regular.woff') format('woff'),
+       url('fonts/Anton-Regular.ttf') format('truetype')
+			 url('fonts/Anton-Regular.otf') format('otf');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sharpie-Regular';
+  src: url('fonts/Sharpie-Regular.woff2') format('woff2'),
+       url('fonts/Sharpie-Regular.woff') format('woff'),
+       url('fonts/Sharpie-Regular.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sharpie-Bold';
+  src: url('fonts/Sharpie-Bold.woff2') format('woff2'),
+       url('fonts/Sharpie-Bold.woff') format('woff'),
+       url('fonts/Sharpie-Bold.ttf') format('truetype');
+       font-weight: 700;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Jost:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap'); */
+
+
+
+
+
+
 :root{
 	--font-size: 16px;
 
 	--line-height: 160%;
+	--gap: 1rem;
 
 	--font-h1:'Jost black', sans-serif;
 	--font-h2:'Jost black', sans-serif;
@@ -9,6 +54,9 @@
 	--font-caption: 'inter', sans-serif; /* 굵기 어떻게 바꾸는데 */
 
 	--font-color-black: #000000;
+	--font-color-red: rgba(251, 60, 38, 0.82);
+
+	--column: 1;
 
 }
 
@@ -21,12 +69,34 @@ body {
 	flex-wrap: wrap;
 }
 
+main {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: var(--gap);
+}
+
+.blocks{
+	display: grid;
+	grid-template-columns: repeat(var(--column), minmax(0, 1fr));
+	gap: var(--gap);
+}
+
 h1 { 
 	font-size: calc(var(--font-size) * 5);
 	font-family: var(--font-h1);
 	color: val(--font-color-black);
 	/* padding: var(--text-padding); */
 }
+aside {
+	opacity: 50%;
+}
+
+/* p + p{
+	margin-top: 1em;
+} */
 
 
 /* PIZZA HELL'S GATE */
@@ -39,6 +109,8 @@ h1 {
 .letter {
 	font-size: calc(var(--font-size) * 10); 
 	font-family: var(--font-h1);
+	color: val(--font-color-red);
+v
 	position: fixed;
 	z-index: -1; 
 }
@@ -47,7 +119,7 @@ h1 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* overflow: hidden; */
+	overflow: hidden;
 	position: relative;
 	height: 100vh;
 	margin: var(--font-size);
@@ -136,42 +208,5 @@ footer {
 }
 
 
-/* FONT FONT FONT FONT FONT FONT FONT FONT FONT FONT */ 
 
-
-@font-face {
-  font-family: 'Anton-Regular';
-  src: url('fonts/Anton-Regular.woff2') format('woff2'),
-       url('fonts/Anton-Regular.woff') format('woff'),
-       url('fonts/Anton-Regular.ttf') format('truetype')
-			 url('fonts/Anton-Regular.otf') format('otf');
-       font-weight: 400;
-       font-display: swap;
-       font-style: normal;
-}
-
-@font-face {
-  font-family: 'Sharpie-Regular';
-  src: url('fonts/Sharpie-Regular.woff2') format('woff2'),
-       url('fonts/Sharpie-Regular.woff') format('woff'),
-       url('fonts/Sharpie-Regular.ttf') format('truetype');
-       font-weight: 400;
-       font-display: swap;
-       font-style: normal;
-}
-
-@font-face {
-  font-family: 'Sharpie-Bold';
-  src: url('fonts/Sharpie-Bold.woff2') format('woff2'),
-       url('fonts/Sharpie-Bold.woff') format('woff'),
-       url('fonts/Sharpie-Bold.ttf') format('truetype');
-       font-weight: 700;
-       font-display: swap;
-       font-style: normal;
-}
-
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Jost:wght@900&display=swap');
-
-
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Jost:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800;1,900&display=swap'); */
 

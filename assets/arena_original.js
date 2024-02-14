@@ -9,8 +9,6 @@ document.head.appendChild(markdownIt)
 // Okay, Are.na stuff!
 let channelSlug = 'pizza-by-the-york' // The “slug” is just the end of the URL
 
-// console.log(channelSlug)
-
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
 	// Target some elements in your HTML:
