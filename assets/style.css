@@ -8,7 +8,7 @@
 	--font-p: 'inter', sans-serif;
 	--font-caption: 'inter', sans-serif; /* 굵기 어떻게 바꾸는데 */
 
-	
+	--font-color-black: #000000;
 
 }
 
@@ -19,13 +19,12 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-
 }
 
 h1 { 
 	font-size: calc(var(--font-size) * 5);
 	font-family: var(--font-h1);
-	color: #000000;
+	color: val(--font-color-black);
 	/* padding: var(--text-padding); */
 }
 
@@ -48,7 +47,7 @@ h1 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
 	height: 100vh;
 	margin: var(--font-size);
