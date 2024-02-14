@@ -46,6 +46,8 @@
 	--font-size: 16px;
 	--font-size-h1: calc(var(--font-size) * 2);
 	--font-size-h2: calc(var(--font-size) * 1.5);
+	--font-size-fig: calc(var(--font-size) * 0.75);
+
 
 	--line-height: 160%;
 	--gap: 1rem;
@@ -131,8 +133,16 @@ h2{
 	text-transform: uppercase;
 
 }
+
 p{
 	font-family: var(--font-p);
+	/* font-size: var(--font-size); 왜때문에 폰트사이즈를 적용하면 12px이 되는거죠?*/
+	line-height: var(--line-height);
+}
+
+figcaption{
+	font-family: var(--font-p);
+	font-size: var(--font-size-fig);
 	line-height: var(--line-height);
 }
 aside {
@@ -173,11 +183,11 @@ aside {
 }
 
 /*없애는거 고래중*/
-.blo { 
-	/* position: absolute; */
+/* .blocks { 
+	position: absolute;
 	overflow: hidden;
 	transform: translateY(100%); /* 초기 위치 설정*/
-}
+} */
 
 img {
 	width: 100%;
