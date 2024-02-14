@@ -53,8 +53,8 @@ let renderBlock = (block) => {
 		`
 		<li class="block block-img">
 			<figure>
-				<img src="${block.image.large.url}" alt="${block.title}by ${block.author}">
-				<figcaption>caption</figcaption>
+				<img src="${block.image.large.url}" alt="${block.title}by ${block.user.full_name}">
+				<figcaption>${ block.title }</figcaption>
 			</figure>
 		</li>
 		`
@@ -64,7 +64,17 @@ let renderBlock = (block) => {
 
 	// Text!
 	else if (block.class == 'Text') {
-		// …up to you!
+		console.log(block)
+		let TextItem = 
+		`
+		<li class="block block-txt">
+			<blockquote>
+				${block.content_html}
+			</blockquote>
+		</li>
+		`
+		channelBlocks.insertAdjacentHTML('beforeend', TextItem)
+
 	}
 
 	// Uploaded (not linked) media…
