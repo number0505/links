@@ -1,81 +1,129 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="assets/reset.css" rel="stylesheet">
-		<link href="assets/style.css" rel="stylesheet">
-	</head>
-	<body>
 
-		<div id="P" class="letter">P</div>
-		<div id="I" class="letter">I</div>
-		<div id="Z1" class="letter">Z</div>
-		<div id="Z2" class="letter">Z</div>
-		<div id="A" class="letter">A</div>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="assets/reset.css" rel="stylesheet">
+	<link href="assets/style.css" rel="stylesheet">
+	<script defer src="assets/arena.js"></script>
+	<script defer src="assets/main.js"></script>
+</head>
 
-		<header>
-			<h1 id="ny-pizza">
-			</h1>
-			<!-- <p><a id="channel-link">See on Are.na ↗</a></p>
-			<section id="channel-description"></section> -->
-		</header>
+<body>
 
-		<main>
-			<!-- <section>
+	<div id="P" class="letter">P</div>
+	<div id="I" class="letter">I</div>
+	<div id="Z1" class="letter">Z</div>
+	<div id="Z2" class="letter">Z</div>
+	<div id="A" class="letter">A</div>
+
+	<header>
+		<h1 id="ny-pizza"></h1>
+		<p><a id="channel-link">See on Are.na ↗</a></p>
+		<section id="channel-description"></section>
+	</header>
+
+	<main>
+		<!-- <section>
 				<h2>All blocks</h2>
 				<ul id="channel-blocks"></ul>
 				<p><span id="channel-count"></span> blocks</p>
 			</section> -->
-			<section class="container">
-				<divx>
-					<img src="content/pizza.webp" alt="Image of New York Pizza">
-				</div>
-			</section>
+		<section class="container">
+			<ul class="blocks">
+				<li class="block block-image">
+					<figure>
+						<img src="content/pizza.webp" alt="Image of New York Pizza">
+						<figcaption>caption</figcaption>
+					</figure>
+				</li>
+				<li class="block block-txt">
+					<blockquote>
+						<h2>Ask ChatGPT: What is New York Pizza?</h2>
+						<p>New York-style pizza is a style of pizza characterized by large, hand-tossed thin crusts and a liberal
+							use of tomato sauce and mozzarella cheese. It's a derivative of the original Neapolitan pizza from Italy
+							but has been adapted to meet the tastes and preferences of New Yorkers. This style of pizza is typically
+							cooked in a gas oven, which contributes to its distinct crisp edge and slightly chewy center.</p>
 
-			<section class="container">
-				<div>
-					<video src="content/2020 pizza rat.mp4" type="video/mp4">
-				</div>
-			</section>
+						<p>A hallmark of New York-style pizza is its flexibility; the slices are large and wide with a thin crust
+							that is foldable yet crispy on the edges. This makes it easy to eat on the go, which suits the fast-paced
+							lifestyle of New York City. Toppings can vary widely, but the classic New York slice features a simple
+							layer of tomato sauce and shredded mozzarella cheese. Additional toppings are often layered on this base,
+							including pepperoni, sausage, mushrooms, onions, and bell peppers.</p>
 
-			<section class="container">
-        <a href="https://www.cntraveler.com/gallery/best-places-for-pizza-in-new-york-city" class="pizza-link">
-            25 Best Places for Pizza in New York City
-        </a>
-    	</section>
-
-			<section class="content-box">
-				<h2>Ask ChatGPT: What is New York Pizza?</h2>
-				<p>New York-style pizza is a style of pizza characterized by large, hand-tossed thin crusts and a liberal use of tomato sauce and mozzarella cheese. It's a derivative of the original Neapolitan pizza from Italy but has been adapted to meet the tastes and preferences of New Yorkers. This style of pizza is typically cooked in a gas oven, which contributes to its distinct crisp edge and slightly chewy center.</p>
-		
-				<p>A hallmark of New York-style pizza is its flexibility; the slices are large and wide with a thin crust that is foldable yet crispy on the edges. This makes it easy to eat on the go, which suits the fast-paced lifestyle of New York City. Toppings can vary widely, but the classic New York slice features a simple layer of tomato sauce and shredded mozzarella cheese. Additional toppings are often layered on this base, including pepperoni, sausage, mushrooms, onions, and bell peppers.</p>
-		
-				<p>New York-style pizza is served in both pizzerias and by the slice, a nod to the city's bustling street food scene. The ability to buy a single slice of pizza and eat it as street food is a defining characteristic of New York's pizza culture. This style of pizza has become immensely popular across the United States and has influenced the development of other regional pizza styles.</p>
-			</section>
-
-		
-
-
-		</main>
-
-		<footer>
-			<h2></h2>
-			<section id="channel-users">Design by Vera Kim</section>
-		</footer>
+						<p>New York-style pizza is served in both pizzerias and by the slice, a nod to the city's bustling street
+							food scene. The ability to buy a single slice of pizza and eat it as street food is a defining
+							characteristic of New York's pizza culture. This style of pizza has become immensely popular across the
+							United States and has influenced the development of other regional pizza styles.</p>
+					</blockquote>
+				</li>
+				<li class="block block-pdf">
+					<a herf="assets/The Source.pdf">
+						<figure>
+							<img src="assets/The Source.png" alt="some information">
+							<figcaption> caption</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li class="block block-video">
+					<figure>
+						<video src="content/2020 pizza rat.mp4" type="video/mp4">
+							<figcaption> caption</figcaption>
+					</figure>
+				</li>
+			</ul>
+		</section>
 
 
 
+		<section class="container">
+			<a href="https://www.cntraveler.com/gallery/best-places-for-pizza-in-new-york-city" class="pizza-link">
+				25 Best Places for Pizza in New York City
+			</a>
+		</section>
+
+		<section class="content-box">
+			<h2>Ask ChatGPT: What is New York Pizza?</h2>
+			<p>New York-style pizza is a style of pizza characterized by large, hand-tossed thin crusts and a liberal use of
+				tomato sauce and mozzarella cheese. It's a derivative of the original Neapolitan pizza from Italy but has been
+				adapted to meet the tastes and preferences of New Yorkers. This style of pizza is typically cooked in a gas
+				oven, which contributes to its distinct crisp edge and slightly chewy center.</p>
+
+			<p>A hallmark of New York-style pizza is its flexibility; the slices are large and wide with a thin crust that is
+				foldable yet crispy on the edges. This makes it easy to eat on the go, which suits the fast-paced lifestyle of
+				New York City. Toppings can vary widely, but the classic New York slice features a simple layer of tomato sauce
+				and shredded mozzarella cheese. Additional toppings are often layered on this base, including pepperoni,
+				sausage, mushrooms, onions, and bell peppers.</p>
+
+			<p>New York-style pizza is served in both pizzerias and by the slice, a nod to the city's bustling street food
+				scene. The ability to buy a single slice of pizza and eat it as street food is a defining characteristic of New
+				York's pizza culture. This style of pizza has become immensely popular across the United States and has
+				influenced the development of other regional pizza styles.</p>
+		</section>
 
 
 
 
-		
+	</main>
 
-		
+	<footer>
+		<h2></h2>
+		<section id="channel-users">Design by Vera Kim</section>
+	</footer>
 
-		
-	</body>
+
+
+
+
+
+
+
+
+
+
+
+</body>
 
 
 
