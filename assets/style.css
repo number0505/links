@@ -68,7 +68,7 @@
 header{
 	position: fixed;
 	padding: var(--gap);
-	/* background: linear-gradient(to bottom, #E3B67A, transparent); */
+	background: linear-gradient(to bottom, #E3B67A, #EFDFB6);
   top: 0;
   left: 0;
   width: 100%;

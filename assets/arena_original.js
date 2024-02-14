@@ -53,7 +53,7 @@ let renderBlock = (block) => {
 		`
 		<li class="block block-img">
 			<figure>
-				<img src="content/pizza.webp" alt="Image of New York Pizza">
+				<img src="${block.image.large.url}" alt="${block.title}by ${block.author}">
 				<figcaption>caption</figcaption>
 			</figure>
 		</li>
