@@ -55,8 +55,10 @@
 	--font-p:'Inter', sans-serif;
 	--font-caption: 'Inter', sans-serif; /* 굵기 어떻게 바꾸는데 */
 
-	--font-color-black: #000000;
-	--font-color-red: rgba(251, 60, 38, 0.82);
+	--color-black: #000000;
+	--color-red: rgba(251, 60, 38, 0.82);
+
+	--background: #EFDFB6;
 
 	--column: 1;
 
@@ -64,21 +66,22 @@
 header{
 	position: fixed;
 	padding: var(--gap);
-	background: linear-gradient(to bottom, rgb(234, 228, 196), transparent);
+	background: linear-gradient(to bottom, #E3B67A, #EFDFB6);
   top: 0;
   left: 0;
   width: 100%;
-	height: calc(val(--font-size)*100);
+	height: calc(var(--font-size)*100);
   z-index: 3;
 }
 
 body {
 	margin: 0;
 	height: 100vh;
-	/* display: flex;
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-wrap: wrap; */
+	flex-wrap: wrap;
+	background: var(--background);
 }
 
 main {
@@ -86,10 +89,25 @@ main {
 	flex-direction: column;
 	gap: var(--gap);
 	max-width: 1200px;
-	margin: 0 auto;
 	padding: var(--gap);
 	margin-top: 200px;
   margin-bottom: 80px; 
+}
+
+footer {
+	position: fixed; 
+
+
+	font-size: calc(var(--font-size) * .9);
+	font-family: var(--font-p);
+
+	padding: var(--gap);
+	background: linear-gradient(to top, #D47E0A, #EFDFB6);
+	right: 0; 
+	bottom: 0; 
+  width: 100%;
+	height: calc(val(--font-size)*10);
+  z-index: 5;
 }
 
 .blocks{
@@ -101,7 +119,7 @@ main {
 h1 { 
 	font-size: var(--font-size-h1);
 	font-family: var(--font-h1);
-	color: val(--font-color-black);
+	color: val(--color-black);
 	/* padding: var(--text-padding); */
 	font-display: uppercase;
 	line-height: var(--line-height);
@@ -129,16 +147,16 @@ aside {
 
 
 /* PIZZA HELL'S GATE */
-#P { top: 7vh; left: 10vw; }
-#I { top: 15vh; right: 20vw; }
-#Z1 { top: 40vh; left: 30vw; }
-#Z2 { bottom: 13vh; right: 30vw; }
-#A { bottom: 2vh; left: 20vw; }
+#P { top: 22vh; left: 10vw; }
+#I { top: 35vh; right: 20vw; }
+#Z1 { top: 50vh; left: 30vw; }
+#Z2 { bottom: 23vh; right: 30vw; }
+#A { bottom: 8vh; left: 20vw; }
 
 .letter {
 	font-size: calc(var(--font-size) * 10); 
 	font-family: var(--font-h1);
-	color: val(--font-color-red);
+	color: val(--color-red);
 
 	position: fixed;
 	z-index: -1; 
@@ -168,7 +186,6 @@ img {
 	object-fit: cover; 
 	aspect-ratio: 1 / 1;
 
-
 	position: static;
 	z-index: 1;
 }
@@ -192,21 +209,7 @@ img {
 	box-sizing: border-box;
 }
 
-footer {
-	position: fixed; 
 
-
-	font-size: calc(var(--font-size) * .9);
-	font-family: var(--font-p);
-
-	padding: var(--gap);
-	background: linear-gradient(to top, rgb(234, 228, 196), transparent);
-	right: 0; 
-	bottom: 0; 
-  width: 100%;
-	height: calc(val(--font-size)*10);
-  z-index: 5;
-}
 
 .content-box {
 	background-color: #f4d03f; 
