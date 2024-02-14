@@ -15,13 +15,13 @@ let placeChannelInfo = (data) => {
 	// Target some elements in your HTML:
 	let channelTitle = document.getElementById('channel-title')
 	let channelDescription = document.getElementById('channel-description')
-	let channelCount = document.getElementById('channel-count')
+	// let channelCount = document.getElementById('channel-count') // 이거 시러
 	let channelLink = document.getElementById('channel-link')
 
 	// Then set their content/attributes to our data:
 	channelTitle.innerHTML = data.title
 	channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
-	channelCount.innerHTML = data.length
+	// channelCount.innerHTML = data.length
 	channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
 
@@ -88,7 +88,6 @@ let renderBlock = (block) => {
 			let videoItem =
 				`
 				<li>
-					<p><em>Video</em></p>
 					<video controls src="${ block.attachment.url }"></video>
 				</li>
 				`
@@ -107,7 +106,9 @@ let renderBlock = (block) => {
 				<a herf="${"block.attachment.url"}
 					<figure>
 						<img src="${block.image.large.url}" alt="${block.title} ">
-						<figcaption> caption</figcaption>
+						<figcaption> 
+						${block.title}
+						</figcaption>
 					</figure>
 				</a>
 			</li>
@@ -141,7 +142,6 @@ let renderBlock = (block) => {
 			let linkedVideoItem =
 				`
 				<li>
-					<p><em>Linked Video</em></p>
 					${ block.embed.html }
 				</li>
 				`
@@ -192,26 +192,4 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// renderUser(data.user, channelUsers)
 	})
 
-
-
-// 	markdownIt.onload = function() {
-//     // markdown-it 로드 완료 후 실행할 코드
-
-//     // 데이터 불러오기 및 처리 로직
-//     fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
-//       .then((response) => response.json())
-//       .then((data) => {
-//           console.log(data);
-//           placeChannelInfo(data);
-
-//           data.contents.reverse().forEach((block) => {
-//               renderBlock(block);
-//           });
-
-//           let channelUsers = document.getElementById('channel-users');
-//           data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers));
-//           renderUser(data.user, channelUsers);
-//       });
-// };
-// document.head.appendChild(markdownIt);
 
