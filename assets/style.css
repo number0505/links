@@ -169,6 +169,10 @@ button{
 	cursor: pointer;
 	border-radius: 3em;
 }
+.block-image img{
+	opacity: 0.5;
+	filter: grayscale(1);
+}	
 
 .title{
 	font-family: var(--font-p);

@@ -65,11 +65,9 @@ let renderBlock = (block) => {
 					</br>
 					</br>
 					${block.created_at} 
-					<button> Close! </button>
+					<button class="close"> Close! </button>
 				</div>
-				<button> 
-					Click here!
-				</button>
+				<button class="open" > Click here! </button>
 	
 			</li>
 			`
@@ -225,16 +223,23 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// renderUser(data.user, channelUsers)
 
 
-		let switchButtons = document.querySelectorAll('.block-image button')
-		console.log(switchButtons)
-		switchButtons.forEach((switchButton) => {
-			switchButton.onclick = () => { // Attach the event.
-				let parentBlock = switchButton.parentElement
+		let openButtons = document.querySelectorAll('.block-image button.open  ')
+		console.log(openButtons)
+		openButtons.forEach((openButton) => {
+			openButton.onclick = () => { // Attach the event.
+				let parentBlock = openButton.parentElement
 				parentBlock.classList.toggle('active') // Toggle the class!
 			};
 		})
 
-
+		let closeButtons = document.querySelectorAll('.block-image button.close')
+		console.log(closeButtons)
+		closeButtons.forEach((closeButton) => {
+			closeButton.onclick = () => { // Attach the event.
+				let parentBlock = closeButton.parentElement.parentElement
+				parentBlock.classList.toggle('active') // Toggle the class!
+			};
+		})
 
 		// let switchButton = document.querySelectorAll('.block-image button')
 		// 	switchButton.onclick = () => { // Attach the click event.
