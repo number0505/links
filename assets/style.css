@@ -173,6 +173,10 @@ button{
 	opacity: 0.5;
 	filter: grayscale(1);
 }	
+.block-image:hover img{
+	opacity: 1;
+	filter: grayscale(0);
+}	
 
 .title{
 	font-family: var(--font-p);
