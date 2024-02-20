@@ -147,16 +147,16 @@ p{
 	margin-top: 1em;
 }
 
-.block-image_description{
+.block-image_description{ /*crated_at은 어디에 있는걸까? ㅠㅠ*/
 	display: none;
+	font-size: calc(var(--font-size) *2);
+	position: fixed;
+	color: hotpink;
+	background-color: rgba(0, 0, 255, 0.75);
+	padding: 0;
+	backdrop-filter: blur(4px);
 
-	/* position: fixed;
-	color: white;
-	background-color: blue, 75%; */
-	/* backdrop-filter: blur(4px);
-	padding: var(--gap); */
-
-	inset: var(--gap);/* 화면 가득 채워줌 */
+	inset:0; /*화면 가득 채워줌*/
 }
 .block-image.active .block-image_description{
 	display: block;
