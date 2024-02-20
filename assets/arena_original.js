@@ -82,7 +82,8 @@ let renderBlock = (block) => {
 				</div>
 			</li>
 		`
-		channelBlocks.insertAdjacentHTML('beforeend', TextItem)
+		let textBlocks = document. getElementById('text-blocks')
+		textBlocks.insertAdjacentHTML('beforeend', TextItem)
 
 	}
 
@@ -169,7 +170,7 @@ let renderBlock = (block) => {
 // It‘s always good to credit your work:
 let renderUser = (user, container) => { // You can have multiple arguments for a function!
 	let userAddress =
-		`
+		` 
 		<address>
 			<img src="${ user.avatar_image.display }">
 			<h3>${ user.first_name }</h3>
