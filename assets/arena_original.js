@@ -59,12 +59,7 @@ let renderBlock = (block) => {
 				</figure>
 	
 				<div class="block-image_description">
-					</br>
-					</br>
-					</br>
-					</br>
-					</br>
-					${block.created_at} 
+					<div class="block-image_padding">${block.created_at} </div>
 					<button class="close"> Close! </button>
 				</div>
 				<button class="open" > Click here! </button>

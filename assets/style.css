@@ -151,12 +151,15 @@ p{
 	display: none;
 	font-size: calc(var(--font-size) *2);
 	position: fixed;
+	padding: 0;;
 	color: hotpink;
 	background-color: rgba(0, 0, 255, 0.75);
-	padding: 0;
 	backdrop-filter: blur(4px);
 
 	inset:0; /*화면 가득 채워줌*/
+}
+.block-image_padding{
+	padding-top: 180px;
 }
 .block-image.active .block-image_description{
 	display: block;
