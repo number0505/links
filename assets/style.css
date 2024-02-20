@@ -150,11 +150,11 @@ p{
 .block-image_description{
 	display: none;
 
-	position: fixed;
+	/* position: fixed;
 	color: white;
-	background-color: blue, 75%;
-	backdrop-filter: blur(4px);
-	padding: var(--gap);
+	background-color: blue, 75%; */
+	/* backdrop-filter: blur(4px);
+	padding: var(--gap); */
 
 	inset: var(--gap);/* 화면 가득 채워줌 */
 }

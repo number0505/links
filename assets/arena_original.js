@@ -6,7 +6,7 @@ document.head.appendChild(markdownIt)
 
 
 
-// Okay, Are.na stuff!
+// Okay, Are.na stuff!    
 let channelSlug = 'pizza-by-the-york' // The “slug” is just the end of the URL
 
 
@@ -48,26 +48,44 @@ let renderBlock = (block) => {
 
 	// Images!
 	else if (block.class == 'Image') {
-		// console.log(block.description_html.length)
-		let ImageItem =
-		`
-		<li class="block block-img">
-			<figure>
-				<img src="${block.image.large.url}" alt="${block.title}by ${block.user.full_name}">
-				<figcaption>${ block.title }</figcaption>
-			</figure>
-
-			<div class="block-image_description">
-				${block.description_html} 
-			</div>
-			<button id="example"> 
-				Click here!
-			</button>
-
-		</li>
-		`
-		channelBlocks.insertAdjacentHTML('beforeend', ImageItem)
-
+		// console.log(block)
+		if(block.created_at.length > 0){
+			let imageItem =
+			`
+			<li class="block block-image">
+				<figure>
+					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+					<figcaption>${ block.title }</figcaption>
+				</figure>
+	
+				<div class="block-image_description">
+					${block.created_at} 
+				</div>
+				<button> 
+					Click here!
+				</button>
+	
+			</li>
+			`
+			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+		} else {
+			let imageItem =
+			`
+			<li class="block block-image">
+				<figure>
+					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+					<figcaption>${ block.title }</figcaption>
+				</figure>
+	
+				<div class="block-image_description">
+					${block.created_at} 
+				</div>
+			</li>
+			`
+			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+	
+		}
+		
 	}
 
 	// Text!
@@ -201,7 +219,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// renderUser(data.user, channelUsers)
 
 
-		let switchButtons = document.querySelectorAll('.block-img button')
+		let switchButtons = document.querySelectorAll('.block-image button')
 		console.log(switchButtons)
 		switchButtons.forEach((switchButton) => {
 			switchButton.onclick = () => { // Attach the event.
@@ -210,9 +228,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			};
 		})
 
-		// switchButton.onclick = () => { // Attach the event.
-		// 	textBlock.classList.toggle(highlightClass) // Toggle the class!
-		// };
 
 
 		// let switchButton = document.querySelectorAll('.block-image button')
