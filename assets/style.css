@@ -164,7 +164,7 @@ p{
 button{
 	margin-top: .5em;
 	padding: var(--gap);
-	color: white;
+	color:  white;
 	background-color: #D47E0A;
 	cursor: pointer;
 	border-radius: 3em;
@@ -172,6 +172,7 @@ button{
 .block-image img{
 	opacity: 0.5;
 	filter: grayscale(1);
+	teansition
 }	
 .block-image:hover img{
 	opacity: 1;
