@@ -202,13 +202,13 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 
 
 		let switchButton = document.querySelector('.block-img button')
-		
-		switchButton.forEach(switchButton) ==> {
-			console.log(switchButton)
+		console.log(switchButtons)
+		switchButton.forEach(switchButtons) ==> {
+			console.log(switchButtons)
 		}
-		switchButton.onclick = () => { // Attach the event.
-			textBlock.classList.toggle(highlightClass) // Toggle the class!
-		};
+		// switchButton.onclick = () => { // Attach the event.
+		// 	textBlock.classList.toggle(highlightClass) // Toggle the class!
+		// };
 
 
 		// let switchButton = document.querySelectorAll('.block-image button')
