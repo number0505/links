@@ -162,8 +162,12 @@ p{
 	display: block;
 }
 button{
+	margin-top: .5em;
 	padding: var(--gap);
-	background: #D47E0A;
+	color: white;
+	background-color: #D47E0A;
+	cursor: pointer;
+	border-radius: 3em;
 }
 
 .title{

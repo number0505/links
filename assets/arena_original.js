@@ -48,7 +48,7 @@ let renderBlock = (block) => {
 
 	// Images!
 	else if (block.class == 'Image') {
-		console.log(block.description_html.length)
+		// console.log(block.description_html.length)
 		let ImageItem =
 		`
 		<li class="block block-img">
@@ -201,13 +201,22 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// renderUser(data.user, channelUsers)
 
 
-
-		let switchButton = document.querySelectorAll('.block-image button')
-			switchButton.onclick = () => { // Attach the click event.
-				alert('The button was clicked!') // Pop an alert!
-			} // 여기 뭔소리하는지 모르겠음
-
-		switchButton.forEach((switchButton)=>{
+		let switchButton = document.querySelector('.block-img button')
+		
+		switchButton.forEach(switchButton) ==> {
 			console.log(switchButton)
-		})
+		}
+		switchButton.onclick = () => { // Attach the event.
+			textBlock.classList.toggle(highlightClass) // Toggle the class!
+		};
+
+
+		// let switchButton = document.querySelectorAll('.block-image button')
+		// 	switchButton.onclick = () => { // Attach the click event.
+		// 		alert('The button was clicked!') // Pop an alert!
+		// 	} // 여기 뭔소리하는지 모르겠음
+
+		// switchButton.forEach((switchButton)=>{
+		// 	console.log(switchButton)
+		// })
 	})
