@@ -147,6 +147,25 @@ p{
 	margin-top: 1em;
 }
 
+.block-image_description{
+	display: none;
+
+	position: fixed;
+	color: white;
+	background-color: blue, 75%;
+	backdrop-filter: blur(4px);
+	padding: var(--gap);
+
+	inset: var(--gap);/* 화면 가득 채워줌 */
+}
+.block-image.active .block-image_description{
+	display: block;
+}
+button{
+	padding: var(--gap);
+	background: #D47E0A;
+}
+
 .title{
 	font-family: var(--font-p);
 	font-size: var(--font-size-fig);

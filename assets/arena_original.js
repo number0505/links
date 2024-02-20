@@ -48,7 +48,7 @@ let renderBlock = (block) => {
 
 	// Images!
 	else if (block.class == 'Image') {
-		// console.log(block)
+		console.log(block.description_html.length)
 		let ImageItem =
 		`
 		<li class="block block-img">
@@ -56,6 +56,14 @@ let renderBlock = (block) => {
 				<img src="${block.image.large.url}" alt="${block.title}by ${block.user.full_name}">
 				<figcaption>${ block.title }</figcaption>
 			</figure>
+
+			<div class="block-image_description">
+				${block.description_html} 
+			</div>
+			<button id="example"> 
+				Click here!
+			</button>
+
 		</li>
 		`
 		channelBlocks.insertAdjacentHTML('beforeend', ImageItem)
@@ -190,6 +198,15 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// let channelUsers = document.getElementById('channel-users') // Show them together
 		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		// renderUser(data.user, channelUsers)
+
+
+
+		let switchButton = document.querySelectorAll('.block-image button')
+			switchButton.onclick = () => { // Attach the click event.
+				alert('The button was clicked!') // Pop an alert!
+			} // 여기 뭔소리하는지 모르겠음
+
+		switchButton.forEach((switchButton)=>{
+			console.log(switchButton)
+		})
 	})
-
-
