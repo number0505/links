@@ -1,0 +1,70 @@
+
+
+:root{
+	--font-size: 16px;
+	--font-size-h1: calc(var(--font-size) * 10);
+	--font-size-h2: calc(var(--font-size) * 1.5);
+	--font-size-fig: calc(var(--font-size) * 0.9);
+	--font-size-bq: calc(var(--font-size)*1.2);
+
+	--line-height: 160%;
+	--gap: 1rem;
+
+	--font-h1: 'Graduate', serif;
+	--font-h2: 'Graduate', display;
+	--font-p:'Inter', sans-serif;
+	--font-caption: 'Inter', sans-serif; /* 굵기 어떻게 바꾸는데 */
+
+	--color-black: #000000;
+	--color-red: rgba(220, 47, 28);
+
+	--background: #EFDFB6;
+
+	--column: 3;
+}
+
+/* 
+body{
+	width: auto;
+	height: auto;
+} */
+main{
+	margin: 30px;
+	padding: 30px;
+	border: 20px red solid;
+
+	width: calc(100vw - 60px);
+	height: calc(100vh - 60px);
+
+	box-sizing: border-box; /* padding과 border를 요소의 크기에 포함 */
+
+	display: flex; /* 내부 컨텐츠를 정렬하기 위해 flexbox 사용 */
+	flex-direction: column; /* 아이템을 세로로 배치 */
+	justify-content: center; /* 가로 방향 중앙 정렬 */
+	align-items: center; /* 세로 방향 중앙 정렬 */
+
+}
+
+
+h1 { 
+	font-size: var(--font-size-h1);
+	font-family: var(--font-h1);
+	color: var(--color-red);
+	/* padding: var(--text-padding); */
+	font-display: uppercase;
+	line-height: calc(var(--line-height)/2);
+	text-transform: uppercase;
+
+	text-align: center;
+}
+
+p{
+	font-family: var(--font-p);
+	padding: 30px 50px;
+	text-align: center;
+
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Inter:wght@100..900&display=swap');
+

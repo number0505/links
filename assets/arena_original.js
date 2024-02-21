@@ -73,28 +73,28 @@ let renderBlock = (block) => {
 
 				<div class="title">
 					${block.title}
-					<div class="block-txt_content">
-					${block.content_html}
-					</div>
 				</div>
 			</li>
 		`
-		let textBlocks = document. getElementById('text-blocks')
-		textBlocks.insertAdjacentHTML('beforeend', TextItem)
+		// let textBlocks = document. getElementById('text-blocks')
+		// textBlocks.insertAdjacentHTML('beforeend', TextItem)
+		channelBlocks.insertAdjacentHTML('beforeend', TextItem)
+
 	}
 
-	
 
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
 		let attachment = block.attachment.content_type // Save us some repetition
+
+			// VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO 
 
 		// Uploaded videos!
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li>
+				<li class="block block-video">
 					<video controls src="${ block.attachment.url }"></video>
 				</li>
 				`
@@ -113,9 +113,7 @@ let renderBlock = (block) => {
 				<a herf="${"block.attachment.url"}
 					<figure>
 						<img src="${block.image.large.url}" alt="${block.title} ">
-						<figcaption> 
-						${block.title}
-						</figcaption>
+
 					</figure>
 				</a>
 			</li>
