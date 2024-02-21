@@ -35,7 +35,7 @@ let renderBlock = (block) => {
 	// console.log(block.class)
 
 
-	// Links!
+	// LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK 
 	if (block.class == 'Link') {
 		let linkItem =
 			`
@@ -46,7 +46,7 @@ let renderBlock = (block) => {
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
-	// Images!
+	// IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE 
 	else if (block.class == 'Image') {
 		// console.log(block)
 		if(block.created_at.length > 0){
@@ -84,25 +84,29 @@ let renderBlock = (block) => {
 			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	
 		}
-		
 	}
 
-	// Text!
+	// TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
 	else if (block.class == 'Text') {
-		// console.log(block)
+		console.log(block)
+
 		let TextItem = 
 		`
 			<li class="block block-txt">
-				${block.content_html}
+
 				<div class="title">
 					${block.title}
+					<div class="block-txt_content">
+					${block.content_html}
+					</div>
 				</div>
 			</li>
 		`
 		let textBlocks = document. getElementById('text-blocks')
 		textBlocks.insertAdjacentHTML('beforeend', TextItem)
-
 	}
+
+	
 
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
@@ -212,29 +216,27 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			renderBlock(block) // Pass the single block data to the render function
 		})
 
-		// // Also display the owner and collaborators:
-		// let channelUsers = document.getElementById('channel-users') // Show them together
-		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
-		// renderUser(data.user, channelUsers)
 
 
-		let openButtons = document.querySelectorAll('.block-image button.open  ')
-		console.log(openButtons)
+		let openButtons = document.querySelectorAll('.block-image button.open')
+		// console.log(openButtons)
 		openButtons.forEach((openButton) => {
 			openButton.onclick = () => { // Attach the event.
 				let parentBlock = openButton.parentElement
-				parentBlock.classList.toggle('active') // Toggle the class!
+				document.querySelectorAll('.block-image').forEach(block => block.classList.remove('active'));
+				parentBlock.classList.add('active') // Toggle the class!
 			};
 		})
 
 		let closeButtons = document.querySelectorAll('.block-image button.close')
-		console.log(closeButtons)
+		// console.log(closeButtons)
 		closeButtons.forEach((closeButton) => {
 			closeButton.onclick = () => { // Attach the event.
 				let parentBlock = closeButton.parentElement.parentElement
-				parentBlock.classList.toggle('active') // Toggle the class!
+				parentBlock.classList.remove('active'); // Toggle the class!
 			};
 		})
+		
 
 		// let switchButton = document.querySelectorAll('.block-image button')
 		// 	switchButton.onclick = () => { // Attach the click event.
@@ -244,4 +246,11 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// switchButton.forEach((switchButton)=>{
 		// 	console.log(switchButton)
 		// })
+
+		// // Also display the owner and collaborators:
+		// let channelUsers = document.getElementById('channel-users') // Show them together
+		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
+		// renderUser(data.user, channelUsers)
+
 	})
+
