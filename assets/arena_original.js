@@ -49,7 +49,6 @@ let renderBlock = (block) => {
 	// IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE 
 	else if (block.class == 'Image') {
 		// console.log(block)
-		if(block.created_at.length > 0){
 			let imageItem =
 			`
 			<li class="block block-image">
@@ -67,24 +66,8 @@ let renderBlock = (block) => {
 			</li>
 			`
 			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-		} else {
-			let imageItem =
-			`
-			<li class="block block-image">
-				<figure>
-					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-					<figcaption>${ block.title }</figcaption>
-				</figure>
+		} 
 	
-				<div class="block-image_description">
-					${block.created_at} 
-				</div>
-			</li>
-			`
-			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-	
-		}
-	}
 
 	// TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
 	else if (block.class == 'Text') {
