@@ -52,21 +52,15 @@ let renderBlock = (block) => {
 			let imageItem =
 			`
 			<li class="block block-image">
-				<figure>
+				<figure class>
 					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-					<figcaption>${ block.title }</figcaption>
 				</figure>
-	
-				<div class="block-image_description">
-					<div class="block-image_padding">${block.created_at} </div>
-					<button class="close"> Close! </button>
-				</div>
-				<button class="open" > Click here! </button>
-	
 			</li>
 			`
 			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 		} 
+
+	
 	
 
 	// TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
@@ -236,4 +230,3 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// renderUser(data.user, channelUsers)
 
 	})
-
