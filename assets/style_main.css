@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Inter:wght@100..900&display=swap');
 
 :root{
 	--font-size: 16px;
@@ -66,5 +67,5 @@ p{
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Inter:wght@100..900&display=swap');
+
 

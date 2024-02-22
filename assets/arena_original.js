@@ -37,10 +37,15 @@ let renderBlock = (block) => {
 
 	// LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK 
 	if (block.class == 'Link') {
+		console.log(block)
 		let linkItem =
 			`
+
 			<li class="block block-link">
-				<h3>${ block.title }</h3>
+			
+				<h3>
+				<a href="${block.source.url}">${block.title}</a>
+				</h3>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -51,13 +56,41 @@ let renderBlock = (block) => {
 		// console.log(block)
 			let imageItem =
 			`
+			<button class="img-button">
 			<li class="block block-image">
-				<figure class>
 					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-				</figure>
 			</li>
+			</button>
 			`
 			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+			// Assuming this code snippet is placed where it runs after the buttons have been added to the DOM
+document.querySelectorAll('.img-button').forEach(button => {
+    button.addEventListener('click', function() {
+        // Find the img element within the clicked button
+        const imgSrc = this.querySelector('img').src;
+
+        // Create a new div to hold the fullscreen image
+        const fullscreenDiv = document.createElement('div');
+        fullscreenDiv.classList.add('fullscreen-image-container');
+        
+        // Create the new img element with the same src
+        const fullscreenImg = document.createElement('img');
+        fullscreenImg.src = imgSrc;
+
+        // Append the img to the fullscreen div
+        fullscreenDiv.appendChild(fullscreenImg);
+
+        // Add a click event to the fullscreen div to remove it when clicked
+        fullscreenDiv.addEventListener('click', function() {
+            this.remove();
+        });
+
+        // Append the fullscreen div to the body
+        document.body.appendChild(fullscreenDiv);
+    });
+});
+
+			
 		} 
 
 	
@@ -65,15 +98,15 @@ let renderBlock = (block) => {
 
 	// TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
 	else if (block.class == 'Text') {
-		console.log(block)
+		// console.log(block)
 
 		let TextItem = 
 		`
 			<li class="block block-txt">
 
-				<div class="title">
+				<h3 class="title">
 					${block.title}
-				</div>
+				</h3>
 			</li>
 		`
 		// let textBlocks = document. getElementById('text-blocks')
@@ -95,7 +128,7 @@ let renderBlock = (block) => {
 			let videoItem =
 				`
 				<li class="block block-video">
-					<video controls src="${ block.attachment.url }"></video>
+					<videocontrols src="${ block.attachment.url }"></video>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -103,18 +136,16 @@ let renderBlock = (block) => {
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
 		}
 
+		// PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
-			console.log(block)
+			// console.log(block)
 
 			let pdfItem = 
 			`
 			<li class="block block-pdf">
 				<a herf="${"block.attachment.url"}
-					<figure>
 						<img src="${block.image.large.url}" alt="${block.title} ">
-
-					</figure>
 				</a>
 			</li>
 			`
@@ -190,27 +221,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
-
-
-
-		let openButtons = document.querySelectorAll('.block-image button.open')
-		// console.log(openButtons)
-		openButtons.forEach((openButton) => {
-			openButton.onclick = () => { // Attach the event.
-				let parentBlock = openButton.parentElement
-				document.querySelectorAll('.block-image').forEach(block => block.classList.remove('active'));
-				parentBlock.classList.add('active') // Toggle the class!
-			};
-		})
-
-		let closeButtons = document.querySelectorAll('.block-image button.close')
-		// console.log(closeButtons)
-		closeButtons.forEach((closeButton) => {
-			closeButton.onclick = () => { // Attach the event.
-				let parentBlock = closeButton.parentElement.parentElement
-				parentBlock.classList.remove('active'); // Toggle the class!
-			};
-		})
 		
 
 		// let switchButton = document.querySelectorAll('.block-image button')
@@ -227,4 +237,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		// renderUser(data.user, channelUsers)
 
-	})
+	});
+
+
+
