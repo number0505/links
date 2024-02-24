@@ -6,8 +6,9 @@ document.head.appendChild(markdownIt)
 
 
 
-// Okay, Are.na stuff!    
-let channelSlug = 'pizza-by-the-york' // The “slug” is just the end of the URL
+// Okay, Are.na stuff!
+let channelSlug = 'typography-and-interaction-too' // The “slug” is just the end of the URL
+
 
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
@@ -15,15 +16,16 @@ let placeChannelInfo = (data) => {
 	// Target some elements in your HTML:
 	let channelTitle = document.getElementById('channel-title')
 	let channelDescription = document.getElementById('channel-description')
-	// let channelCount = document.getElementById('channel-count') // 이거 시러
+	let channelCount = document.getElementById('channel-count')
 	let channelLink = document.getElementById('channel-link')
 
 	// Then set their content/attributes to our data:
 	channelTitle.innerHTML = data.title
 	channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
-	// channelCount.innerHTML = data.length
+	channelCount.innerHTML = data.length
 	channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
+
 
 
 // Then our big function for specific-block-type rendering:
@@ -31,95 +33,40 @@ let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.getElementById('channel-blocks')
 
-
-	console.log(block.class)
-
-
-	// LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK 
+	// Links!
 	if (block.class == 'Link') {
-		// console.log(block)
 		let linkItem =
 			`
-
-			<li class="block block-link">
-			
-				<h3>
-				<a href="${block.source.url}">${block.title}</a>
-				</h3>
+			<li>
+				<p><em>Link</em></p>
+				<picture>
+					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
+					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+					<img src="${ block.image.original.url }">
+				</picture>
+				<h3>${ block.title }</h3>
+				${ block.description_html }
+				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
-	// IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE 
+	// Images!
 	else if (block.class == 'Image') {
-		// console.log(block)
-			let imageItem =
-			`
-			<button class="img-button">
-			<li class="block block-image">
-					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-			</li>
-			</button>
-			`
-			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-			// Assuming this code snippet is placed where it runs after the buttons have been added to the DOM
-document.querySelectorAll('.img-button').forEach(button => {
-    button.addEventListener('click', function() {
-        // Find the img element within the clicked button
-        const imgSrc = this.querySelector('img').src;
-
-        // Create a new div to hold the fullscreen image
-        const fullscreenDiv = document.createElement('div');
-        fullscreenDiv.classList.add('fullscreen-image-container');
-        
-        // Create the new img element with the same src
-        const fullscreenImg = document.createElement('img');
-        fullscreenImg.src = imgSrc;
-
-        // Append the img to the fullscreen div
-        fullscreenDiv.appendChild(fullscreenImg);
-
-        // Add a click event to the fullscreen div to remove it when clicked
-        fullscreenDiv.addEventListener('click', function() {
-            this.remove();
-        });
-
-        // Append the fullscreen div to the body
-        document.body.appendChild(fullscreenDiv);
-    });
-});
-
-			
-		} 
-
-	// TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
-	else if (block.class == 'Text') {
-		// console.log(block)
-
-		let TextItem = 
-		`
-			<li class="block block-txt">
-
-				<h3 class="title">
-					${block.title}
-				</h3>
-			</li>
-		`
-		// let textBlocks = document. getElementById('text-blocks')
-		// textBlocks.insertAdjacentHTML('beforeend', TextItem)
-		channelBlocks.insertAdjacentHTML('beforeend', TextItem)
-
+		// …up to you!
 	}
 
+	// Text!
+	else if (block.class == 'Text') {
+		// …up to you!
+	}
 
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
 		let attachment = block.attachment.content_type // Save us some repetition
 
-
 		// Uploaded videos!
-
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
@@ -134,22 +81,9 @@ document.querySelectorAll('.img-button').forEach(button => {
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
 		}
 
-		
-		// PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
-			// console.log(block)
-
-			let pdfItem = 
-			`
-			<li class="block block-pdf">
-				<a herf="${"block.attachment.url"}
-						<img src="${block.image.large.url}" alt="${block.title} ">
-				</a>
-			</li>
-			`
-			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
-
+			// …up to you!
 		}
 
 		// Uploaded audio!
@@ -171,16 +105,13 @@ document.querySelectorAll('.img-button').forEach(button => {
 	else if (block.class == 'Media') {
 		let embed = block.embed.type
 
-
-		// VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO 
-
 		// Linked video!
-
 		if (embed.includes('video')) {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li class="block block-video">
+				<li>
+					<p><em>Linked Video</em></p>
 					${ block.embed.html }
 				</li>
 				`
@@ -188,7 +119,6 @@ document.querySelectorAll('.img-button').forEach(button => {
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 		}
 
-		
 		// Linked audio!
 		else if (embed.includes('rich')) {
 			// …up to you!
@@ -201,7 +131,7 @@ document.querySelectorAll('.img-button').forEach(button => {
 // It‘s always good to credit your work:
 let renderUser = (user, container) => { // You can have multiple arguments for a function!
 	let userAddress =
-		` 
+		`
 		<address>
 			<img src="${ user.avatar_image.display }">
 			<h3>${ user.first_name }</h3>
@@ -220,29 +150,14 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		console.log(data) // Always good to check your response!
 		placeChannelInfo(data) // Pass the data to the first function
 
-		console.log(data.contents)
 		// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
 		data.contents.reverse().forEach((block) => {
 			// console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
-		
 
-		// let switchButton = document.querySelectorAll('.block-image b utton')
-		// 	switchButton.onclick = () => { // Attach the click event.
-		// 		alert('The button was clicked!') // Pop an alert!
-		// 	} // 여기 뭔소리하는지 모르겠음
-
-		// switchButton.forEach((switchButton)=>{
-		// 	console.log(switchButton)
-		// })
-
-		// // Also display the owner and collaborators:
-		// let channelUsers = document.getElementById('channel-users') // Show them together
-		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
-		// renderUser(data.user, channelUsers)
-
-	});
-
-
-
+		// Also display the owner and collaborators:
+		let channelUsers = document.getElementById('channel-users') // Show them together
+		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
+		renderUser(data.user, channelUsers)
+	})
