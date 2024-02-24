@@ -157,6 +157,11 @@ aside {
 .block{
 	width:350px;
 	height: 350px;
+
+	border-radius: 100%;
+	object-fit: cover;
+	aspect-ratio: 1 / 1;
+
 }
 
  /* LINK LINK LINK LINK LINK LINK LINK LINK LINK LNK LINK LINK LINK LINK LINK LINK  */
@@ -167,7 +172,7 @@ aside {
 
 	/* width: 100%; 
 	aspect-ratio: 1/1;	 */
-	background-color: red;
+	background-color: var(--color-red);
 	color: white; 
 	border-radius: 50%;
 	text-decoration: none; /* 링크 밑줄 제거 !! */
@@ -265,7 +270,7 @@ button{
 }
 
 .block-image{
-	background-color: tomato;
+	background-color: var(--color-red);
 	border-radius: 50%;
 	
 }
@@ -326,6 +331,12 @@ video {
 	height: auto;  */
 }
 
+iframe{
+	border-radius: 100%;
+	aspect-ratio: 1/1;
+	opacity: .5;
+}
+
 .block-video{
 	/* border-radius: 100%; */
 	position: relative;
@@ -344,7 +355,7 @@ video {
 /* PDF  PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF */
 
 .block-pdf{
-	background-color: tomato; 
+	background-color: var(--color-red); 
 	font-size: var(--font-size-h2);
 	color: #333; 
 	filter: grayscale(1);
