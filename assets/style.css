@@ -50,15 +50,39 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: var(--gap);
-	max-width: 1200px;
+	max-width: 1200px;/* 이게 뭔데 */
 	padding: var(--gap);
-	margin-top: 200px;
+	margin-top: 20px;
   margin-bottom: 80px; 
+
+
+  align-items: center;
+  width: 100vh;
+	height: 100vw;
+
+  transform: translate3d(0,-100vh,0);
+  transform-origin: right top;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 1px;
+	transform-style: preserve-3d;
+  /* padding-bottom: 10rem; */
+
+
+
+  /* transform-origin: right top;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  height: 100vw;
+  perspective: 1px;
+	transform-style: preserve-3d;
+  padding-bottom: 10rem; */
 }
 
+z
 footer {
 	position: fixed; 
-
 
 	font-size: calc(var(--font-size) * .9);
 	font-family: var(--font-p);
@@ -205,6 +229,25 @@ img {
 	position: static;
 	z-index: 1;
 }
+
+.pepperoni {
+  /* transform: rotate(90deg); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 40vh; */
+  transform-origin: 50% 50%;
+  transform: translateZ(.1px) scale(0.9) translateX(0px) translateY(-3vh);
+  /* transition: 1s; */
+}
+
+.pepperoni:hover {
+	min-height: 70vh;
+}
+.slower {
+  transform: rotate(90deg) translateZ(-.2px) scale(1.1) translateX(0%) translateY(-10vh);
+}
+
 /* .filtered{
 	background-color: tomato;
 	position: relative;

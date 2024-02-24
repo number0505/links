@@ -57,7 +57,7 @@ let renderBlock = (block) => {
 			let imageItem =
 			`
 			<button class="img-button">
-			<li class="filtered block block-image">
+			<li class="pepperoni slower filtered block block-image">
 					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
 			</li>
 			</button>
