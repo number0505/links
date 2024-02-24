@@ -57,7 +57,7 @@ let renderBlock = (block) => {
 			let imageItem =
 			`
 			<button class="img-button">
-			<li class="block block-image">
+			<li class="filtered block block-image">
 					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
 			</li>
 			</button>
@@ -180,7 +180,7 @@ document.querySelectorAll('.img-button').forEach(button => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li class="block block-video">
+				<li class="filtered block block-video">
 					${ block.embed.html }
 				</li>
 				`

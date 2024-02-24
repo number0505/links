@@ -269,10 +269,20 @@ button{
 	border-radius: 100%;
 }
 
+.filtered {
+	background: var(--color-red);
+}
+
+.filtered img {
+ mix-blend-mode: screen;
+ -webkit-filter: grayscale(100%) contrast(200%);
+ filter: grayscale(100%) contrast(200%);
+ opacity: 1;
+}
+
 .block-image{
 	background-color: var(--color-red);
 	border-radius: 50%;
-	
 }
 
 .block-image img{
