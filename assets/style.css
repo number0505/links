@@ -273,6 +273,7 @@ button{
 	background: var(--color-red);
 }
 
+/*  전부 적용할까 말까 */
 .filtered img {
  mix-blend-mode: screen;
  -webkit-filter: grayscale(100%) contrast(200%);
