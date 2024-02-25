@@ -161,10 +161,11 @@ p{
 	height: 200px;
 	border-radius: 100%;
 	object-fit: cover;
+	transition: 1s;
 }
 
 .block:hover{
-	transform: scale(1.2);
+	transform: scale(1.25);
 }
 
 button{

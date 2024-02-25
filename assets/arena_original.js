@@ -53,45 +53,48 @@ let renderBlock = (block) => {
 
 	// IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE 
 	else if (block.class == 'Image') {
-		// console.log(block)
-			let imageItem =
-			`
-			<button class="img-button">
-			<li class="pepperoni slower filtered block block-image">
-					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-			</li>
-			</button>
-			`
-			channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-			// Assuming this code snippet is placed where it runs after the buttons have been added to the DOM
-document.querySelectorAll('.img-button').forEach(button => {
-    button.addEventListener('click', function() {
-        // Find the img element within the clicked button
-        const imgSrc = this.querySelector('img').src;
+    // Generate random positions within the grid
+    const xPosition = Math.random() * 100; // Random position between 0 and 100%
+    const yPosition = Math.random() * 100; // Random position between 0 and 100%
+    
+    let imageItem =
+        `
+        <button class="img-button">
+            <li class="pepperoni slower filtered block block-image" style="transform: translate(${xPosition}%, ${yPosition}%);">
+                <img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+            </li>
+        </button>
+        `;
+    channelBlocks.insertAdjacentHTML('beforeend', imageItem);
+    
+    // Assuming this code snippet is placed where it runs after the buttons have been added to the DOM
+    document.querySelectorAll('.img-button').forEach(button => {
+        button.addEventListener('click', function() {
+            // Find the img element within the clicked button
+            const imgSrc = this.querySelector('img').src;
 
-        // Create a new div to hold the fullscreen image
-        const fullscreenDiv = document.createElement('div');
-        fullscreenDiv.classList.add('fullscreen-image-container');
-        
-        // Create the new img element with the same src
-        const fullscreenImg = document.createElement('img');
-        fullscreenImg.src = imgSrc;
+            // Create a new div to hold the fullscreen image
+            const fullscreenDiv = document.createElement('div');
+            fullscreenDiv.classList.add('fullscreen-image-container');
+            
+            // Create the new img element with the same src
+            const fullscreenImg = document.createElement('img');
+            fullscreenImg.src = imgSrc;
 
-        // Append the img to the fullscreen div
-        fullscreenDiv.appendChild(fullscreenImg);
+            // Append the img to the fullscreen div
+            fullscreenDiv.appendChild(fullscreenImg);
 
-        // Add a click event to the fullscreen div to remove it when clicked
-        fullscreenDiv.addEventListener('click', function() {
-            this.remove();
+            // Add a click event to the fullscreen div to remove it when clicked
+            fullscreenDiv.addEventListener('click', function() {
+                this.remove();
+            });
+
+            // Append the fullscreen div to the body
+            document.body.appendChild(fullscreenDiv);
         });
-
-        // Append the fullscreen div to the body
-        document.body.appendChild(fullscreenDiv);
     });
-});
+}
 
-			
-		} 
 
 	// TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
 	else if (block.class == 'Text') {
@@ -159,7 +162,7 @@ document.querySelectorAll('.img-button').forEach(button => {
 				`
 				<li>
 					<p><em>Audio</em></p>
-					<audio controls src="${ block.attachment.url }"></video>
+					<audio controls src="${ block.attachment.url }"></audio>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
@@ -226,6 +229,3 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			renderBlock(block) // Pass the single block data to the render function
 		})
 	});
-
-
-
