@@ -69,30 +69,44 @@ let renderBlock = (block) => {
     
     // Assuming this code snippet is placed where it runs after the buttons have been added to the DOM
     document.querySelectorAll('.img-button').forEach(button => {
-        button.addEventListener('click', function() {
-            // Find the img element within the clicked button
-            const imgSrc = this.querySelector('img').src;
+			button.addEventListener('click', function() {
+					// Find the img element within the clicked button
+					const imgSrc = this.querySelector('img').src;
+	
+					// Create a new div to hold the fullscreen image
+					const fullscreenDiv = document.createElement('div');
+					fullscreenDiv.classList.add('fullscreen-image-container');
+					
+					fullscreenDiv.classList.add('active');
+					
+					// Create the new img element with the same src
+					const fullscreenImg = document.createElement('img');
+					fullscreenImg.src = imgSrc;
+	
+					// Append the img to the fullscreen div
+					fullscreenDiv.appendChild(fullscreenImg);
+	
+					// Create a close button (X button) for the fullscreen div
+					const closeButton = document.createElement('button');
+					closeButton.classList.add('close-button');
+					closeButton.textContent = 'X';
+					fullscreenDiv.appendChild(closeButton);
+					// Append the fullscreen div to the body
+					document.body.appendChild(fullscreenDiv);
 
-            // Create a new div to hold the fullscreen image
-            const fullscreenDiv = document.createElement('div');
-            fullscreenDiv.classList.add('fullscreen-image-container');
-            
-            // Create the new img element with the same src
-            const fullscreenImg = document.createElement('img');
-            fullscreenImg.src = imgSrc;
+					closeButton.addEventListener('click', function(event) {
+						event.stopPropagation(); // Prevent any parent handlers from being executed
+						console.log("Close button clicked!"); // Check if the event listener is triggered
+						fullscreenDiv.classList.remove('active'); // Remove the active class to hide the fullscreenDiv
+						document.body.removeChild(fullscreenDiv); // Optionally, remove the fullscreen div entirely
+				});
+				
+				
+			});
+			
+	});
+	
 
-            // Append the img to the fullscreen div
-            fullscreenDiv.appendChild(fullscreenImg);
-
-            // Add a click event to the fullscreen div to remove it when clicked
-            fullscreenDiv.addEventListener('click', function() {
-                this.remove();
-            });
-
-            // Append the fullscreen div to the body
-            document.body.appendChild(fullscreenDiv);
-        });
-    });
 }
 
 
@@ -123,24 +137,12 @@ let renderBlock = (block) => {
 
 		// Uploaded videos!
 
-		if (attachment.includes('video')) {
-			// …still up to you, but we’ll give you the `video` element:
-			let videoItem =
-				`
-				<li>
-					<p><em>Video</em></p>
-					<video controls src="${ block.attachment.url }"></video>
-				</li>
-				`
-			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
-			// More on video, like the `autoplay` attribute:
-			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-		}
+
 
 		
 		// PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF
 		// Uploaded PDFs!
-		else if (attachment.includes('pdf')) {
+		 if (attachment.includes('pdf')) {
 			// console.log(block)
 
 			let pdfItem = 
@@ -156,18 +158,7 @@ let renderBlock = (block) => {
 		}
 
 		// Uploaded audio!
-		else if (attachment.includes('audio')) {
-			// …still up to you, but here’s an `audio` element:
-			let audioItem =
-				`
-				<li>
-					<p><em>Audio</em></p>
-					<audio controls src="${ block.attachment.url }"></audio>
-				</li>
-				`
-			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
-			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
-		}
+		
 	}
 
 	// Linked media…
@@ -181,9 +172,13 @@ let renderBlock = (block) => {
 
 		if (embed.includes('video')) {
 			// …still up to you, but here’s an example `iframe` element:
+			 // Generate random positions within the grid
+			 const xPosition = Math.random() * 100; // Random position between 0 and 100%
+			 const yPosition = Math.random() * 100; // Random position between 0 and 100%
 			let linkedVideoItem =
 				`
-				<li class="filtered block block-video">
+				<li class="filtered block block-video"
+				style="transform: translate(${xPosition}%, ${yPosition}%);">
 					${ block.embed.html }
 				</li>
 				`

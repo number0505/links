@@ -154,10 +154,12 @@ p{
 	display: grid;
 	grid-template-columns: repeat(var(--column), minmax(0, 1fr));
 	gap: var(--gap);
+	width: 80vw; /*CHANGE THE SPREAD OF CIRCLES*/
 }
 
 .block{
 	width: 200px;
+	position:relative;
 	height: 200px;
 	border-radius: 100%;
 	object-fit: cover;
@@ -165,7 +167,9 @@ p{
 }
 
 .block:hover{
-	transform: scale(1.25);
+	width: 300px;
+	height: 300px;
+	z-index: 1000;
 }
 
 button{
@@ -271,19 +275,23 @@ img {
 	top: 0;
 	left: 0;
 	width: 100vw;
-	border-radius: 100%;
+	border-radius: 0%;
 	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
-	z-index: 1000; /* Ensure it appears above other content */
+	z-index: 2000; /* Ensure it appears above other content */
+	/* background-color: rgba(255, 0, 0, 0.076); */
+}
+
+.active{
+	display: flex!important;
 }
 
 .fullscreen-image-container img {
-	max-width: 100%;
-	max-height: 100%;
-	border-radius: 100%;
+	width: 30%;
+	height:auto;
+	border-radius: 0%;
 }
 
 /* fiter effect fiter effect fiter effect fiter effect */
@@ -307,18 +315,17 @@ img {
 	display: block;
 } */
 
-/* .close-button {
-	position: fixed;
+.close-button {
+	/* position: fixed; */
 	top: 120px;
 	right: 20px;
-	z-index: 20;
+	z-index: 3000;
 	padding: 10px; 
 	background-color: #fff;
 	color: #000; 
 	border: none;
-
 	font-size: var(--font-size);
-} */
+}
 
 
 /* TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT */
