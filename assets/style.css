@@ -60,13 +60,13 @@ main {
   width: 100vh;
 	height: 100vw;
 
-  transform: translate3d(0,-100vh,0);
-  transform-origin: right top;
+  /* transform: translate3d(0,-100vh,0); */
+  /* transform-origin: right top;
   overflow-y: auto;
   overflow-x: hidden;
   perspective: 1px;
 	transform-style: preserve-3d;
-  /* padding-bottom: 10rem; */
+  padding-bottom: 10rem; */
 
 
 
@@ -80,7 +80,7 @@ main {
   padding-bottom: 10rem; */
 }
 
-z
+
 footer {
 	position: fixed; 
 
@@ -179,8 +179,8 @@ aside {
 }
 
 .block{
-	width:350px;
-	height: 350px;
+	width:300px;
+	height: 300px;
 
 	border-radius: 100%;
 	object-fit: cover;
@@ -242,11 +242,12 @@ img {
 }
 
 .pepperoni:hover {
-	min-height: 70vh;
+	z-index: 10000;
 }
 .slower {
-  transform: rotate(90deg) translateZ(-.2px) scale(1.1) translateX(0%) translateY(-10vh);
+  transform: rotate(20deg) translateZ(0) scale(1.1) translateX(-10vw) translateY(10vh);
 }
+
 
 /* .filtered{
 	background-color: tomato;
