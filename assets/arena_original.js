@@ -212,7 +212,6 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 }
 
 
-
 // Now that we have said what we can do, go get the data:
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
@@ -226,22 +225,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
-		
-
-		// let switchButton = document.querySelectorAll('.block-image b utton')
-		// 	switchButton.onclick = () => { // Attach the click event.
-		// 		alert('The button was clicked!') // Pop an alert!
-		// 	} // 여기 뭔소리하는지 모르겠음
-
-		// switchButton.forEach((switchButton)=>{
-		// 	console.log(switchButton)
-		// })
-
-		// // Also display the owner and collaborators:
-		// let channelUsers = document.getElementById('channel-users') // Show them together
-		// data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
-		// renderUser(data.user, channelUsers)
-
 	});
 
 

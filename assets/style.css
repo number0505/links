@@ -22,7 +22,7 @@
 	--column: 3;
 }  
 
-header{
+/* header{
 	position: fixed;
 	padding: var(--gap);
 	background: linear-gradient(to bottom, #E3B67A, #EFDFB6);
@@ -30,11 +30,10 @@ header{
   left: 0;
   width: 100%;
   z-index: 3;
-}
+} */
 
 body {
 	margin: 0;
-	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -42,24 +41,16 @@ body {
 	background: var(--background);
 }
 
-.main_title{
-	font-size: var(--font-size-h1);
-}
-
 main {
 	display: flex;
 	flex-direction: column;
 	gap: var(--gap);
-	max-width: 1200px;/* 이게 뭔데 */
 	padding: var(--gap);
 	margin-top: 20px;
   margin-bottom: 80px; 
-
-
   align-items: center;
-  width: 100vh;
-	height: 100vw;
-
+  width: 100vw;
+	height: 100vh;
   /* transform: translate3d(0,-100vh,0); */
   /* transform-origin: right top;
   overflow-y: auto;
@@ -116,34 +107,22 @@ h2{
 
 }
 
-
-
 p{
 	font-family: var(--font-p);
 	/* font-size: var(--font-size); 왜때문에 폰트사이즈를 적용하면 12px이 되는거죠?*/
 	line-height: var(--line-height);
 }
 
-
-
 .title{
 	font-family: var(--font-p);
 	font-size: var(--font-size-fig);
 	line-height: var(--line-height);
 }
-figcaption{
+/* figcaption{
 	font-family: var(--font-p);
 	font-size: var(--font-size-fig);
 	line-height: var(--line-height);
-}
-aside {
-	opacity: 50%;
-}
-
-/* p + p{
-	margin-top: 1em;
 } */
-
 
 /* PIZZA HELL'S GATE */
 #P { top: 22vh; left: 10vw; }
@@ -157,12 +136,11 @@ aside {
 	font-family: var(--font-h1);
 	color: var(--color-black);
 	opacity: 50%;
-
 	position: fixed;
 	z-index: -1; 
 }
 
-.container {
+/* .container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -170,9 +148,7 @@ aside {
 	position: relative;
 	height: 100vh;
 	margin: var(--font-size);
-
-}
-
+} */
 
 .blocks{
 	display: grid;
@@ -183,11 +159,12 @@ aside {
 .block{
 	width: 200px;
 	height: 200px;
-
 	border-radius: 100%;
 	object-fit: cover;
-	aspect-ratio: 1 / 1;
+}
 
+.block:hover{
+	transform: scale(1.2);
 }
 
 button{
@@ -202,9 +179,7 @@ button{
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-
-	/* width: 100%; 
-	aspect-ratio: 1/1;	 */
+	/* width: 100%;  */
 	background-color: var(--color-red);
 	color: white; 
 	border-radius: 50%;
@@ -220,11 +195,15 @@ button{
 	padding: var(--gap); 
 	margin: 20px auto; 
 	box-sizing: border-box;
+	transition: .5s;
+}
+
+.block-link:hover{
+	color: white;
 }
 
 a{
 		cursor: pointer;
-
 }
 
 /* IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE */
@@ -239,26 +218,13 @@ a{
   opacity: 0.5;
 } */
 /* 
-.block-image_description{ crated_at은 어디에 있는걸까? ㅠㅠ
-	display: none;
-	font-size: calc(var(--font-size) *2);
-	position: fixed;
-	padding: 0;;
-	color: hotpink;
-	background-color: rgba(0, 0, 255, 0.75);
-	backdrop-filter: blur(4px);
-
-	inset:0; 화면 가득 채워줌
 } */
 
 img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover; 
-	aspect-ratio: 1 / 1;
 	border-radius: 50%;
-
-	position: static;
 	z-index: 1;
 }
 
@@ -273,23 +239,9 @@ img {
   /* transition: 1s; */
 }
 
-.slower {
-}
-
-
-.block-image{
-	background-color: var(--color-red);
-	border-radius: 50%;
-	transform: rotate(20deg) translateZ(0) scale(1.0) translateX(-20vw) translateY(20vh);
-
-}
-/* .pepperoni:hover {
-	z-index: 10000;
-} */
-.block-image .block-image{
+/* .block-image{
 	opacity: 1;
 	filter: grayscale(1);
-	
 }	
 .block-image:hover {
 	opacity: 1;
@@ -297,15 +249,13 @@ img {
 	z-index: 10000;
 
 	filter: none;
-	transform: rotate(20deg) translateZ(0) scale(1.2) translateX(-20vw) translateY(20vh);
+	transform: translateZ(0) scale(1.2) translateX(-20vw) translateY(20vh);
 
 	transition: 200ms linear all;
-}	
-
-
+}	 */
 
 /* fullscreen fullscreen fullscreen fullscreen fullscreen */
-.block-image.active img{
+/* .block-image.active img{
 	width: 100vw;
 	height: 100vh;
 	object-fit: cover;
@@ -313,8 +263,7 @@ img {
 	z-index: 10; 
 	top: 0; 
 	left: 0; 
-	/* border-radius: 0%; */
-}
+} */
 
 .fullscreen-image-container {
 	position: fixed;
@@ -377,14 +326,11 @@ img {
 	background-color: #f4d03f; 
 	font-size: var(--font-size-h2);
 	color: #333; 
-
 	/* display: inline-block; */
-
 	padding: var(--gap); 
 	margin: 20px auto; 
 	width: 100%; 
 	border-radius: 50%;
-	aspect-ratio: 1 / 1;
 	/* box-sizing: border-box;  */
 	box-shadow: 10px 10px 5px lightblue inset;
 
@@ -405,21 +351,17 @@ video {
 
 iframe{
 	border-radius: 100%;
-	aspect-ratio: 1/1;
 	opacity: .5;
 }
 
 .block-video{
 	/* border-radius: 100%; */
 	position: relative;
-
 	display: flex;
   justify-content: center;
   align-items: center;
-
 	padding: var(--gap); 
 	margin: 20px auto; 
-
 	overflow: hidden;
 }
 
@@ -431,7 +373,6 @@ iframe{
 	font-size: var(--font-size-h2);
 	color: #333; 
 	filter: grayscale(1);
-
 	padding: var(--gap); 
 	margin: 20px auto; 
 	border-radius: 50%;
@@ -450,12 +391,6 @@ iframe{
 	display: block;
 }
  */
-
-
-
-
-
-
 
 /* TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET */
 /* TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET */
