@@ -55,7 +55,6 @@ h1 {
 	font-display: uppercase;
 	line-height: calc(var(--line-height)/2);
 	text-transform: uppercase;
-
 	text-align: center;
 }
 
@@ -63,7 +62,6 @@ p{
 	font-family: var(--font-p);
 	padding: 30px 50px;
 	text-align: center;
-
 }
 
 

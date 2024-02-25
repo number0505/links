@@ -41,16 +41,75 @@ body {
 	background: var(--background);
 }
 
-main {
+#intro{
+	background: white;
+	position:absolute;
+	z-index: 3100;
+	top:0px;
+	width: 100vw;
+	height:122vh;
+	box-sizing: border-box; 
+	display: flex; /* 내부 컨텐츠를 정렬하기 위해 flexbox 사용 */
+	flex-direction: column; /* 아이템을 세로로 배치 */
+	justify-content: center; /* 가로 방향 중앙 정렬 */
+}
+
+#pizzabox{
+	width: 90vw;
+	height: 90vh;
+	margin: 0;
+	text-align: center;
+	padding: 30px;
+	border: 20px red solid;
+	box-sizing: border-box; 
+	display: flex; 
+	justify-content: center; 
+	flex-direction: column;
+	margin: 0 auto;
+}
+
+
+
+#pizzabox > h1{
+	font-size: var(--font-size-h1);
+	font-family: var(--font-h1);
+	color: var(--color-red);
+	/* padding: var(--text-padding); */
+	font-display: uppercase;
+	line-height: calc(var(--line-height)/2);
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#pizzabox > p{
+	font-family: var(--font-p);
+	padding: 30px 50px;
+	text-align: center;
+}
+
+#pizzaheader{
+	background: white;
+	text-align: center;
+}
+
+#pizzaheader.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+
+#body {
 	display: flex;
 	flex-direction: column;
 	gap: var(--gap);
 	padding: var(--gap);
-	margin-top: 20px;
-  margin-bottom: 80px; 
+	margin-top: 120vh;
   align-items: center;
   width: 100vw;
-	height: 100vh;
+	height: 90vh;
   /* transform: translate3d(0,-100vh,0); */
   /* transform-origin: right top;
   overflow-y: auto;
@@ -155,6 +214,7 @@ p{
 	grid-template-columns: repeat(var(--column), minmax(0, 1fr));
 	gap: var(--gap);
 	width: 80vw; /*CHANGE THE SPREAD OF CIRCLES*/
+	margin-bottom:30vh;
 }
 
 .block{
@@ -280,7 +340,7 @@ img {
 	display: none;
 	justify-content: center;
 	align-items: center;
-	z-index: 2000; /* Ensure it appears above other content */
+	z-index: 2000; 
 	/* background-color: rgba(255, 0, 0, 0.076); */
 }
 

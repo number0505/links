@@ -224,3 +224,16 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			renderBlock(block) // Pass the single block data to the render function
 		})
 	});
+
+
+	window.addEventListener('scroll', function() {
+		var header = document.getElementById('pizzaheader');
+		// Calculate the 90vh in pixels
+		var triggerHeight = window.innerHeight * 0.9;
+		if (window.scrollY >= triggerHeight) {
+			header.classList.add('sticky');
+		} else {
+			header.classList.remove('sticky');
+		}
+	});
+	
