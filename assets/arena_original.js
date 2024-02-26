@@ -54,12 +54,12 @@ let renderBlock = (block) => {
 	// IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE 
 	else if (block.class == 'Image') {
     // Generate random positions within the grid
-    const xPosition = Math.random() * 100; // Random position between 0 and 100%
-    const yPosition = Math.random() * 100; // Random position between 0 and 100%
+    const xPosition = Math.random() * 50; // Random position between 0 and 100%
+    const yPosition = Math.random() * 50; // Random position between 0 and 100%
     const currentImageButton = document.createElement('button');
 		currentImageButton.classList.add('img-button');
 		currentImageButton.innerHTML = `
-				<li class="pepperoni slower filtered block block-image" style="transform: translate(${xPosition}%, ${yPosition}%);">
+				<li class="pepperoni slower filtered block block-image" style="transform-origin: center, transform: translate(${xPosition}%, ${yPosition}%);">
 						<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
 				</li>
 		
