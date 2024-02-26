@@ -56,55 +56,53 @@ let renderBlock = (block) => {
     // Generate random positions within the grid
     const xPosition = Math.random() * 100; // Random position between 0 and 100%
     const yPosition = Math.random() * 100; // Random position between 0 and 100%
-    
-    let imageItem =
-        `
-        <button class="img-button">
-            <li class="pepperoni slower filtered block block-image" style="transform: translate(${xPosition}%, ${yPosition}%);">
-                <img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-            </li>
-        </button>
-        `;
-    channelBlocks.insertAdjacentHTML('beforeend', imageItem);
+    const currentImageButton = document.createElement('button');
+		currentImageButton.classList.add('img-button');
+		currentImageButton.innerHTML = `
+				<li class="pepperoni slower filtered block block-image" style="transform: translate(${xPosition}%, ${yPosition}%);">
+						<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+				</li>
+		
+		`
+
+    channelBlocks.appendChild(currentImageButton);
     
     // Assuming this code snippet is placed where it runs after the buttons have been added to the DOM
-    document.querySelectorAll('.img-button').forEach(button => {
-			button.addEventListener('click', function() {
-					// Find the img element within the clicked button
-					const imgSrc = this.querySelector('img').src;
+		currentImageButton.addEventListener('click', function () {
+			// Find the img element within the clicked button
+			const imgSrc = this.querySelector('img').src;
 	
-					// Create a new div to hold the fullscreen image
-					const fullscreenDiv = document.createElement('div');
-					fullscreenDiv.classList.add('fullscreen-image-container');
-					
-					fullscreenDiv.classList.add('active');
-					
-					// Create the new img element with the same src
-					const fullscreenImg = document.createElement('img');
-					fullscreenImg.src = imgSrc;
-	
-					// Append the img to the fullscreen div
-					fullscreenDiv.appendChild(fullscreenImg);
-	
-					// Create a close button (X button) for the fullscreen div
-					const closeButton = document.createElement('button');
-					closeButton.classList.add('close-button');
-					closeButton.textContent = 'X';
-					fullscreenDiv.appendChild(closeButton);
-					// Append the fullscreen div to the body
-					document.body.appendChild(fullscreenDiv);
-
-					closeButton.addEventListener('click', function(event) {
-						event.stopPropagation(); // Prevent any parent handlers from being executed
-						console.log("Close button clicked!"); // Check if the event listener is triggered
-						fullscreenDiv.classList.remove('active'); // Remove the active class to hide the fullscreenDiv
-						document.body.removeChild(fullscreenDiv); // Optionally, remove the fullscreen div entirely
-				});
-				
-				
-			});
+			// Create a new div to hold the fullscreen image
+			const fullscreenDiv = document.createElement('div');
+			fullscreenDiv.classList.add('fullscreen-image-container');
 			
-	});
+			fullscreenDiv.classList.add('active');
+			
+			// Create the new img element with the same src
+			const fullscreenImg = document.createElement('img');
+			fullscreenImg.src = imgSrc;
+	
+			// Append the img to the fullscreen div
+			fullscreenDiv.appendChild(fullscreenImg);
+	
+			// Create a close button (X button) for the fullscreen div
+			const closeButton = document.createElement('button');
+			closeButton.classList.add('close-button');
+			closeButton.textContent = 'X';
+			fullscreenDiv.appendChild(closeButton);
+
+			closeButton.addEventListener('click', function(event) {
+				event.stopPropagation(); // Prevent any parent handlers from being executed
+				console.log("Close button clicked!"); // Check if the event listener is triggered
+				fullscreenDiv.classList.remove('active'); // Remove the active class to hide the fullscreenDiv
+				document.body.removeChild(fullscreenDiv); // Optionally, remove the fullscreen div entirely
+			});
+			// Append the fullscreen div to the body
+			document.body.appendChild(fullscreenDiv);
+			})
+
+
+
 	
 
 }
@@ -193,6 +191,7 @@ let renderBlock = (block) => {
 		}
 	}
 }
+
 
 
 
