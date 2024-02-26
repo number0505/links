@@ -10,6 +10,7 @@ document.head.appendChild(markdownIt)
 let channelSlug = 'pizza-by-the-york' // The “slug” is just the end of the URL
 
 
+
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
 	// Target some elements in your HTML:
@@ -104,6 +105,9 @@ let renderBlock = (block) => {
 			});
 			// Append the fullscreen div to the body
 			document.body.appendChild(fullscreenDiv);
+			const iframeBoundingRect = fullscreenImg.getBoundingClientRect();
+			closeButton.style.left = iframeBoundingRect.right + 20 +'px';
+			closeButton.style.top = iframeBoundingRect.top - 30 + 'px';
 			})
 
 
@@ -162,7 +166,11 @@ let renderBlock = (block) => {
 				document.body.removeChild(fullscreenDiv); // Optionally, remove the fullscreen div entirely
 			});
 			// Append the fullscreen div to the body
-			document.body.appendChild(fullscreenDiv);``
+			document.body.appendChild(fullscreenDiv);
+			const iframeBoundingRect = fullscreenParagraph.getBoundingClientRect();
+			closeButton.style.left = iframeBoundingRect.right + 20 +'px';
+			closeButton.style.top = iframeBoundingRect.top - 30 + 'px';
+
 			})
 
 
@@ -268,17 +276,20 @@ let renderBlock = (block) => {
 			closeButton.classList.add('close-button');
 			closeButton.textContent = 'X';
 			fullscreenDiv.appendChild(closeButton);
-
+			
 			closeButton.addEventListener('click', function(event) {
 				event.stopPropagation(); // Prevent any parent handlers from being executed
 				console.log("Close button clicked!"); // Check if the event listener is triggered
 				fullscreenDiv.classList.remove('active'); // Remove the active class to hide the fullscreenDiv
 				document.body.classList.remove('no-scroll');
-
+				
 				document.body.removeChild(fullscreenDiv); // Optionally, remove the fullscreen div entirely
 			});
 			// Append the fullscreen div to the body
 			document.body.appendChild(fullscreenDiv);
+			const iframeBoundingRect = fullscreenVideoWrapper.getBoundingClientRect();
+			closeButton.style.left = iframeBoundingRect.right + 20 +'px';
+			closeButton.style.top = iframeBoundingRect.top - 30 + 'px';
 			})
 
 		}
