@@ -43,11 +43,9 @@ body {
 
 #intro{
 	background: white;
-	position:absolute;
-	z-index: 3100;
+	z-index: 1100;
 	top:0px;
 	width: 100vw;
-	height:122vh;
 	box-sizing: border-box; 
 	display: flex; /* 내부 컨텐츠를 정렬하기 위해 flexbox 사용 */
 	flex-direction: column; /* 아이템을 세로로 배치 */
@@ -76,7 +74,6 @@ body {
 	color: var(--color-red);
 	/* padding: var(--text-padding); */
 	font-display: uppercase;
-	line-height: calc(var(--line-height)/2);
 	text-transform: uppercase;
 	text-align: center;
 }
@@ -90,6 +87,11 @@ body {
 #pizzaheader{
 	background: white;
 	text-align: center;
+	position: sticky;
+}
+
+#pizzaheader > h1 {
+	font-size: 8vw;
 }
 
 #pizzaheader.sticky {
@@ -106,10 +108,11 @@ body {
 	flex-direction: column;
 	gap: var(--gap);
 	padding: var(--gap);
-	margin-top: 120vh;
+	/* margin-top: 120vh; */
   align-items: center;
   width: 100vw;
-	height: 90vh;
+	height: fit-content;
+	overflow-x: hidden;
   /* transform: translate3d(0,-100vh,0); */
   /* transform-origin: right top;
   overflow-y: auto;
@@ -224,6 +227,7 @@ p{
 	border-radius: 100%;
 	object-fit: cover;
 	transition: 1s;
+	transform-origin: center !important; 
 }
 
 .block:hover{
@@ -341,7 +345,9 @@ img {
 	justify-content: center;
 	align-items: center;
 	z-index: 2000; 
-	/* background-color: rgba(255, 0, 0, 0.076); */
+	background-color: rgba(62, 61, 61, 0.774);
+	backdrop-filter: blur(10px);
+
 }
 
 .active{
@@ -354,7 +360,20 @@ img {
 	border-radius: 0%;
 }
 
+.fullscreen-text-container {
+	width: 40%;
+	height: 40vh;
+	overflow-y: scroll;
+	background-color: #333;
+	color:#EFDFB6;
+	padding: 2em;
+}
+
 /* fiter effect fiter effect fiter effect fiter effect */
+
+.no-scroll {
+	overflow-y: hidden;
+}
 
 .filtered {
 	background: var(--color-red);
@@ -377,11 +396,11 @@ img {
 
 .close-button {
 	/* position: fixed; */
-	top: 120px;
+	top: 0px;
 	right: 20px;
 	z-index: 3000;
 	padding: 10px; 
-	background-color: #fff;
+	background-color: var(--color-red);
 	color: #000; 
 	border: none;
 	font-size: var(--font-size);
@@ -391,17 +410,23 @@ img {
 /* TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT */
 
 .block-txt {
-	background-color: #f4d03f; 
+	background-color: var(--color-red); 
+	font-family: var(--font-p); 
 	font-size: var(--font-size-h2);
 	color: #333; 
 	/* display: inline-block; */
 	padding: var(--gap); 
 	margin: 20px auto; 
-	width: 100%; 
 	border-radius: 50%;
 	/* box-sizing: border-box;  */
-	box-shadow: 10px 10px 5px lightblue inset;
+	/* box-shadow: 10px 10px 5px lightblue inset; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
+.block-txt > .title {
+	text-align: center;
 }
 
 .block-txt blockquote + p {

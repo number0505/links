@@ -54,12 +54,13 @@ let renderBlock = (block) => {
 	// IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE 
 	else if (block.class == 'Image') {
     // Generate random positions within the grid
-    const xPosition = Math.random() * 50; // Random position between 0 and 100%
+    const xPosition = Math.random() * 80 - 50; // Random position between 0 and 100%
     const yPosition = Math.random() * 50; // Random position between 0 and 100%
     const currentImageButton = document.createElement('button');
 		currentImageButton.classList.add('img-button');
+		currentImageButton.classList.add('block')
 		currentImageButton.innerHTML = `
-				<li class="pepperoni slower filtered block block-image" style="transform-origin: center, transform: translate(${xPosition}%, ${yPosition}%);">
+				<li class="pepperoni slower filtered block block-image" style="transform: translate(${xPosition}%, ${yPosition}%);">
 						<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
 				</li>
 		
@@ -77,7 +78,8 @@ let renderBlock = (block) => {
 			fullscreenDiv.classList.add('fullscreen-image-container');
 			
 			fullscreenDiv.classList.add('active');
-			
+			document.body.classList.add('no-scroll');
+
 			// Create the new img element with the same src
 			const fullscreenImg = document.createElement('img');
 			fullscreenImg.src = imgSrc;
@@ -95,6 +97,8 @@ let renderBlock = (block) => {
 				event.stopPropagation(); // Prevent any parent handlers from being executed
 				console.log("Close button clicked!"); // Check if the event listener is triggered
 				fullscreenDiv.classList.remove('active'); // Remove the active class to hide the fullscreenDiv
+				document.body.classList.remove('no-scroll');
+
 				document.body.removeChild(fullscreenDiv); // Optionally, remove the fullscreen div entirely
 			});
 			// Append the fullscreen div to the body
@@ -111,19 +115,55 @@ let renderBlock = (block) => {
 	// TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
 	else if (block.class == 'Text') {
 		// console.log(block)
-
-		let TextItem = 
+		const currentTextItem = document.createElement('button');
+		currentTextItem.classList.add('block')
+		currentTextItem.classList.add('block-txt')
+		currentTextItem.innerHTML = 
 		`
-			<li class="block block-txt">
-
 				<h3 class="title">
 					${block.title}
 				</h3>
-			</li>
 		`
 		// let textBlocks = document. getElementById('text-blocks')
 		// textBlocks.insertAdjacentHTML('beforeend', TextItem)
-		channelBlocks.insertAdjacentHTML('beforeend', TextItem)
+		channelBlocks.appendChild(currentTextItem)
+    
+    // Assuming this code snippet is placed where it runs after the buttons have been added to the DOM
+		currentTextItem.addEventListener('click', function () {
+	
+			// Create a new div to hold the fullscreen image
+			const fullscreenDiv = document.createElement('div');
+			fullscreenDiv.classList.add('fullscreen-image-container');
+			
+			fullscreenDiv.classList.add('active');
+			document.body.classList.add('no-scroll');
+			
+			// Create the new img element with the same src
+			const fullscreenParagraph = document.createElement('p');
+			fullscreenParagraph.classList.add('fullscreen-text-container')
+			fullscreenParagraph.innerHTML = block.content;
+	
+			// Append the img to the fullscreen div
+			fullscreenDiv.appendChild(fullscreenParagraph);
+	
+			// Create a close button (X button) for the fullscreen div
+			const closeButton = document.createElement('button');
+			closeButton.classList.add('close-button');
+			closeButton.textContent = 'X';
+			fullscreenDiv.appendChild(closeButton);
+
+			closeButton.addEventListener('click', function(event) {
+				event.stopPropagation(); // Prevent any parent handlers from being executed
+				console.log("Close button clicked!"); // Check if the event listener is triggered
+				fullscreenDiv.classList.remove('active'); // Remove the active class to hide the fullscreenDiv
+				document.body.classList.remove('no-scroll');
+
+				document.body.removeChild(fullscreenDiv); // Optionally, remove the fullscreen div entirely
+			});
+			// Append the fullscreen div to the body
+			document.body.appendChild(fullscreenDiv);``
+			})
+
 
 	}
 
@@ -146,8 +186,8 @@ let renderBlock = (block) => {
 			let pdfItem = 
 			`
 			<li class="block block-pdf">
-				<a herf="${"block.attachment.url"}
-						<img src="${block.image.large.url}" alt="${block.title} ">
+			<a href="${block.attachment.url}">
+						<img src="${block.image.large.url}" alt="${block.title}"/>
 				</a>
 			</li>
 			`
@@ -171,13 +211,13 @@ let renderBlock = (block) => {
 		if (embed.includes('video')) {
 			// …still up to you, but here’s an example `iframe` element:
 			 // Generate random positions within the grid
-			 const xPosition = Math.random() * 100; // Random position between 0 and 100%
+			 const xPosition = Math.random() * 80; // Random position between 0 and 100%
 			 const yPosition = Math.random() * 100; // Random position between 0 and 100%
 			let linkedVideoItem =
 				`
 				<li class="filtered block block-video"
 				style="transform: translate(${xPosition}%, ${yPosition}%);">
-					${ block.embed.html }
+					<img src="${ block.image.large.url}" alt="${block.title}"/>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
@@ -227,12 +267,16 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 
 	window.addEventListener('scroll', function() {
 		var header = document.getElementById('pizzaheader');
+		const bodyEl = document.getElementById('body')
 		// Calculate the 90vh in pixels
 		var triggerHeight = window.innerHeight * 0.9;
 		if (window.scrollY >= triggerHeight) {
 			header.classList.add('sticky');
+			bodyEl.style.marginTop = `${header.offsetHeight}px`;
 		} else {
 			header.classList.remove('sticky');
+			bodyEl.style.marginTop = '0vh';
+
 		}
 	});
 	
