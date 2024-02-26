@@ -59,10 +59,11 @@ let renderBlock = (block) => {
     const currentImageButton = document.createElement('button');
 		currentImageButton.classList.add('img-button');
 		currentImageButton.classList.add('block')
-		currentImageButton.innerHTML = `
-				<li class="pepperoni slower filtered block block-image" style="transform: translate(${xPosition}%, ${yPosition}%);">
-						<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
-				</li>
+		currentImageButton.innerHTML = 
+		`
+			<li class="pepperoni slower filtered block block-image" style="transform: translate(${xPosition}%, ${yPosition}%);">
+					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
+			</li>
 		
 		`
 
@@ -213,18 +214,75 @@ let renderBlock = (block) => {
 			 // Generate random positions within the grid
 			 const xPosition = Math.random() * 80; // Random position between 0 and 100%
 			 const yPosition = Math.random() * 100; // Random position between 0 and 100%
-			let linkedVideoItem =
+			 const currentVideoButton = document.createElement('button');
+			currentVideoButton.classList.add('video-button');
+			currentVideoButton.classList.add('block')
+			currentVideoButton.innerHTML = 
 				`
 				<li class="filtered block block-video"
 				style="transform: translate(${xPosition}%, ${yPosition}%);">
-					<img src="${ block.image.large.url}" alt="${block.title}"/>
+					<img class="video-thumbnail" src="${ block.image.large.url}" alt="${block.title}"/>
+					<img class="video-play" src="content/play button.png"/>
 				</li>
 				`
-			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
-			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
-		}
 
+			channelBlocks.appendChild(currentVideoButton)
+			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 		
+	
+    
+    // Assuming this code snippet is placed where it runs after the buttons have been added to the DOM
+		currentVideoButton.addEventListener('click', function () {
+			// Find the img element within the clicked button
+			const youtubeBaseUrl = block.source.url;
+			const trimmedUrl = youtubeBaseUrl.replace('https://www.youtube.com/watch?v=', '')
+			const youtubeEmbedUrl = 'https://www.youtube.com/embed/' + trimmedUrl
+			console.log(youtubeEmbedUrl)
+	
+			// Create a new div to hold the fullscreen image
+			const fullscreenDiv = document.createElement('div');
+			fullscreenDiv.classList.add('fullscreen-image-container');
+			fullscreenDiv.classList.add('active');
+			document.body.classList.add('no-scroll');
+
+			// Create the new img element with the same src
+			const fullscreenVideoWrapper= document.createElement('p');
+			fullscreenVideoWrapper.innerHTML = `
+			<iframe 
+				class="active-video"
+				width="560" 
+				height="315" 
+				src="${youtubeEmbedUrl}" 
+				title="" 
+				frameBorder="0"   
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen
+			>
+			</iframe>
+			`;
+	
+			// Append the img to the fullscreen div
+			fullscreenDiv.appendChild(fullscreenVideoWrapper);
+	
+			// Create a close button (X button) for the fullscreen div
+			const closeButton = document.createElement('button');
+			closeButton.classList.add('close-button');
+			closeButton.textContent = 'X';
+			fullscreenDiv.appendChild(closeButton);
+
+			closeButton.addEventListener('click', function(event) {
+				event.stopPropagation(); // Prevent any parent handlers from being executed
+				console.log("Close button clicked!"); // Check if the event listener is triggered
+				fullscreenDiv.classList.remove('active'); // Remove the active class to hide the fullscreenDiv
+				document.body.classList.remove('no-scroll');
+
+				document.body.removeChild(fullscreenDiv); // Optionally, remove the fullscreen div entirely
+			});
+			// Append the fullscreen div to the body
+			document.body.appendChild(fullscreenDiv);
+			})
+
+		}
+			
 		// Linked audio!
 		else if (embed.includes('rich')) {
 			// …up to you!

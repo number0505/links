@@ -395,9 +395,7 @@ img {
 } */
 
 .close-button {
-	/* position: fixed; */
-	top: 0px;
-	right: 20px;
+	position: fixed;
 	z-index: 3000;
 	padding: 10px; 
 	background-color: var(--color-red);
@@ -458,6 +456,13 @@ iframe{
 	overflow: hidden;
 }
 
+.video-play {
+	position: absolute;
+}
+
+.active-video {
+	border-radius: 0 !important;
+}
 
 /* PDF  PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF */
 
