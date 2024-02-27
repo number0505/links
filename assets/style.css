@@ -76,10 +76,13 @@ body {
 	width: 40vw;
 	height: auto;
 	border-radius: 0%;
+	margin: auto;
 	/* ? 이미지 가운데 정렬 */
 }
 
 #pizzabox > h1{
+	padding: 2vw 0vh;
+
 	font-size: var(--font-size-h1);
 	font-family: var(--font-h1);
 	color: white;
@@ -96,7 +99,7 @@ body {
 #pizzabox > h3{
 
 	color: var(--color-red);
-	padding: 0vw 8vh;
+	padding: 2vw 8vh;
 	text-align: center;
 
 }
