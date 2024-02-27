@@ -442,7 +442,6 @@ video {
 
 iframe{
 	border-radius: 100%;
-	opacity: .5;
 }
 
 .block-video{
@@ -464,6 +463,10 @@ iframe{
 	border-radius: 0 !important;
 }
 
+.embedly-embed {
+	border-radius: 0 !important;
+
+}
 /* PDF  PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF */
 
 .block-pdf{
