@@ -43,10 +43,12 @@ let renderBlock = (block) => {
 			`
 
 			<li class="block block-link">
-			
-				<h3>
+				<h5>
+				 - ${block.class} -
+				</h5>
+				<h4>
 				<a href="${block.source.url}">${block.title}</a>
-				</h3>
+				</h4>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -125,9 +127,9 @@ let renderBlock = (block) => {
 		currentTextItem.classList.add('block-txt')
 		currentTextItem.innerHTML = 
 		`
-				<h3 class="title">
+				<h4 class="title">
 					${block.title}
-				</h3>
+				</h4>
 		`
 		// let textBlocks = document. getElementById('text-blocks')
 		// textBlocks.insertAdjacentHTML('beforeend', TextItem)

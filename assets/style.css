@@ -4,7 +4,7 @@
 	--font-size-h1: 8vw;
 	--font-size-h2: 6vw;
 	--font-size-h3: calc(var(--font-size) * 2);
-	--font-size-h4: calc(var(--font-size) * 1.5);
+	--font-size-h4: calc(var(--font-size) * 1.3);
 
 	--font-size-fig: calc(var(--font-size) * 0.9);
 	--font-size-bq: calc(var(--font-size)*1.2);
@@ -15,6 +15,9 @@
 
 	--font-h1:'Boxing-Regular', display;
 	--font-h2:'Boxing-Regular', display;
+	--font-h3:'Inter', sans-serif;
+	--font-h4:'Inter', sans-serif;
+
 	--font-p:'Inter', sans-serif;
 	--font-caption: 'Inter', sans-serif; /* 굵기 어떻게 바꾸는데 */
 
@@ -217,6 +220,13 @@ h3{
 	text-transform: uppercase;
 
 }
+h4{
+	font-family: var(--font-h4);
+	font-size: var(--font-size-h4);
+	text-transform: uppercase;
+
+}
+
 
 p{
 	font-family: var(--font-p);
@@ -295,7 +305,10 @@ button{
  /* LINK LINK LINK LINK LINK LINK LINK LINK LINK LNK LINK LINK LINK LINK LINK LINK  */
 .block-link {
 	display: inline-flex;
-	align-items: center;
+
+	flex-direction: column; /* 아이템을 세로로 배치 */
+
+	/* align-items: center;  체크필요 */
 	justify-content: center;
 	/* width: 100%;  */
 	background-color: var(--color-red);
@@ -305,8 +318,8 @@ button{
 	/* box-shadow: 2px 2px 50px rgb(101, 11, 11); */
 
 
-	font-family: var(--font-p); 
-	font-size: var(--font-size-h3);
+	font-family: var(--font-h4); 
+	font-size: var(--font-size-h4);
 	color: #333; 
 
 	text-align: center; 
@@ -459,7 +472,7 @@ img {
 .block-txt {
 	background-color: var(--color-red); 
 	font-family: var(--font-p); 
-	font-size: var(--font-size-h3);
+	font-size: var(--font-size-h4);
 	color: #333; 
 	/* display: inline-block; */
 	padding: var(--gap); 
@@ -477,7 +490,7 @@ img {
 }
 
 .block-txt blockquote + p {
-	font-size: var(--font-size-h3);
+	font-size: var(--font-size-h4);
 	font-family: var(--font-p);
 	line-height: var(--line-height);
 }
