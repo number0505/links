@@ -1,7 +1,7 @@
 
 :root{
 	--font-size: 16px;
-	--font-size-h1: 10vw;
+	--font-size-h1: 8vw;
 	--font-size-h2: 6vw;
 	--font-size-h3: calc(var(--font-size) * 2);
 	--font-size-h4: calc(var(--font-size) * 1.5);
@@ -64,16 +64,16 @@ body {
 	/* margin: 0; */
 	text-align: center;
 	padding: 30px;
-	border: 20px var(--color-red) solid;
+	border: 17px var(--color-red) solid;
 	box-sizing: border-box; 
 	display: flex; 
 	justify-content: center;
 	flex-direction: column;
-	margin: 5vw auto; /* ? 이렇게 하는 거 맞나요?*/
+	margin: 3vw auto; /* ? 이렇게 하는 거 맞나요?*/
 }
 
 #pizzaimg{
-	width: 40vw;
+	width: 500px;
 	height: auto;
 	border-radius: 0%;
 	margin: auto;
@@ -81,7 +81,7 @@ body {
 }
 
 #pizzabox > h1{
-	padding: 2vw 0vh;
+	padding: 30px 50px;
 
 	font-size: var(--font-size-h1);
 	font-family: var(--font-h1);
@@ -99,7 +99,7 @@ body {
 #pizzabox > h3{
 
 	color: var(--color-red);
-	padding: 2vw 8vh;
+	padding: 2vw 15vh;
 	text-align: center;
 
 }
@@ -109,20 +109,26 @@ body {
 	align-items: center; 
 	flex-direction: column;	
 	margin: 0 auto;
-
-	width: 90vw;
-	height: 20vh;
-	border: 20px var(--color-red) solid;
-
-	background: white;
 	text-align: center;
 	position: sticky;
 	justify-content: center;
+
+	background: white;
+
+
+	width: 90vw;
+	height: 18vh;
+	border: 17px var(--color-red) solid;
+
+
 }
 
 #pizzaheader > h2 {
-	color: var(--color-red);
+	color: white;
 	padding-bottom: 0px; /* 필요한지 체크할 것 */
+
+	-webkit-text-stroke-color: var(--color-red);
+  -webkit-text-stroke-width: 3px;
 
 }
 
@@ -130,7 +136,10 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+
+	width: 90vw;
+	justify-content: center;
+
   z-index: 1000; /* Ensure it stays above other content */
 }
 
