@@ -1,8 +1,11 @@
 
 :root{
 	--font-size: 16px;
-	--font-size-h1: calc(var(--font-size) * 10);
-	--font-size-h2: calc(var(--font-size) * 1.5);
+	--font-size-h1: 10vw;
+	--font-size-h2: 6vw;
+	--font-size-h3: calc(var(--font-size) * 2);
+	--font-size-h4: calc(var(--font-size) * 1.5);
+
 	--font-size-fig: calc(var(--font-size) * 0.9);
 	--font-size-bq: calc(var(--font-size)*1.2);
 
@@ -11,7 +14,7 @@
 	--gap: 1rem;
 
 	--font-h1:'Boxing-Regular', display;
-	--font-h2:'Graduate', display;
+	--font-h2:'Boxing-Regular', display;
 	--font-p:'Inter', sans-serif;
 	--font-caption: 'Inter', sans-serif; /* 굵기 어떻게 바꾸는데 */
 
@@ -56,22 +59,24 @@ body {
 #pizzabox{
 	width: 90vw;
 	height: 90vh;
-	margin: 0;
+	/* max-width 800px; ? 어케 설정하나요? */
+
+	/* margin: 0; */
 	text-align: center;
 	padding: 30px;
-	border: 20px red solid;
+	border: 20px var(--color-red) solid;
 	box-sizing: border-box; 
 	display: flex; 
-	align-items: center; 
+	justify-content: center;
 	flex-direction: column;
-	margin: 0 auto;
+	margin: 5vw auto; /* ? 이렇게 하는 거 맞나요?*/
 }
 
 #pizzaimg{
 	width: 40vw;
 	height: auto;
 	border-radius: 0%;
-
+	/* ? 이미지 가운데 정렬 */
 }
 
 #pizzabox > h1{
@@ -88,21 +93,34 @@ body {
 
 }
 
-#pizzabox > p{
-	font-family: var(--font-p);
-	padding: 30px 50vw;
+#pizzabox > h3{
+
+	color: var(--color-red);
+	padding: 0vw 8vh;
 	text-align: center;
 
 }
 
 #pizzaheader{
+	display: flex; 
+	align-items: center; 
+	flex-direction: column;	
+	margin: 0 auto;
+
+	width: 90vw;
+	height: 20vh;
+	border: 20px var(--color-red) solid;
+
 	background: white;
 	text-align: center;
 	position: sticky;
+	justify-content: center;
 }
 
-#pizzaheader > h1 {
-	font-size: 8vw;
+#pizzaheader > h2 {
+	color: var(--color-red);
+	padding-bottom: 0px; /* 필요한지 체크할 것 */
+
 }
 
 #pizzaheader.sticky {
@@ -175,6 +193,14 @@ h1 {
 h2{
 	font-family: var(--font-h2);
 	font-size: var(--font-size-h2);
+	padding-bottom: var(--font-size);
+	text-transform: uppercase;
+
+}
+
+h3{
+	font-family: var(--font-h3);
+	font-size: var(--font-size-h3);
 	padding-bottom: var(--font-size);
 	text-transform: uppercase;
 
@@ -268,7 +294,7 @@ button{
 
 
 	font-family: var(--font-p); 
-	font-size: var(--font-size-h2);
+	font-size: var(--font-size-h3);
 	color: #333; 
 
 	text-align: center; 
@@ -421,7 +447,7 @@ img {
 .block-txt {
 	background-color: var(--color-red); 
 	font-family: var(--font-p); 
-	font-size: var(--font-size-h2);
+	font-size: var(--font-size-h3);
 	color: #333; 
 	/* display: inline-block; */
 	padding: var(--gap); 
@@ -439,7 +465,7 @@ img {
 }
 
 .block-txt blockquote + p {
-	font-size: var(--font-size-h2);
+	font-size: var(--font-size-h3);
 	font-family: var(--font-p);
 	line-height: var(--line-height);
 }
