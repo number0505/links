@@ -230,8 +230,8 @@ let renderBlock = (block) => {
 		if (embed.includes('video')) {
 			// …still up to you, but here’s an example `iframe` element:
 			 // Generate random positions within the grid
-			 const xPosition = Math.random() * 80; // Random position between 0 and 100%
-			 const yPosition = Math.random() * 100; // Random position between 0 and 100%
+			 const xPosition = Math.random() * 10; // Random position between 0 and 100%
+			 const yPosition = Math.random() * 30; // Random position between 0 and 100%
 			 const currentVideoButton = document.createElement('button');
 			currentVideoButton.classList.add('video-button');
 			currentVideoButton.classList.add('block')
