@@ -1,7 +1,7 @@
 
 :root{
 	--font-size: 16px;
-	--font-size-h1: 2vw;
+	--font-size-h1: 15vw;
 	--font-size-h2: 6vw;
 	--font-size-h3: calc(var(--font-size) * 1.2);
 	--font-size-h4: calc(var(--font-size) * 1.3);
@@ -10,7 +10,7 @@
 	--font-size-bq: calc(var(--font-size)*1.2);
 
 	--line-height: 150%;
-	--line-height-h1: 110%;
+	--line-height-title: 90%;
 	--gap: 1rem;
 
 	--font-h1:'Boxing-Regular', display;
@@ -24,8 +24,11 @@
 	--color-black: #000000;
 	--color-red: #dc2f1c;
 
+	--pizzabox-padding: 2vw 0vh;
+	--pizzabox-border: 10px var(--color-red) solid;
+	--pizzabox-content-gap: 20px 0px;
 
-
+	--pizzaimg-size: 270px;
 	--background: #f7efdc;
 
 	--column: 2;
@@ -64,30 +67,22 @@ body {
 #pizzabox{
 	width: 90vw;
 	height: 90vh;
-	/* max-width 800px; ? 어케 설정하나요? */
 
 	/* margin: 0; */
 	text-align: center;
 	padding: 30px;
-	border: 17px var(--color-red) solid;
+	border: var(--pizzabox-border);
 	box-sizing: border-box; 
 	display: flex; 
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	margin: 3vw auto; /* ? 이렇게 하는 거 맞나요?*/
+	margin: 4vw auto; /* ? 이렇게 하는 거 맞나요?*/
 }
 
-#pizzaimg{
-	width: 500px;
-	height: auto;
-	border-radius: 0%;
-	margin: auto;
-	/* ? 이미지 가운데 정렬 */
-}
 
 #pizzabox > h1{
-	padding: 30px 50px;
+	padding: var(--pizzabox-content-gap);
 	max-width: 800px;
 	font-size: var(--font-size-h1);
 	font-family: var(--font-h1);
@@ -102,13 +97,22 @@ body {
 
 }
 
+#pizzaimg{
+	width: var(--pizzaimg-size);
+	height: auto;
+	border-radius: 0%;
+	/* ? 이미지 가운데 정렬 */
+}
+
+/* for channel discription */
 #pizzabox > h3{
 
 	color: var(--color-red);
-	padding: 2vw 15vh;
+	padding: var(--pizzabox-content-gap);
 	text-align: center;
 
 }
+
 
 #pizzaheader{
 	display: flex; 
@@ -121,13 +125,13 @@ body {
 
 	background: white;
 
-
 	width: 90vw;
 	height: 18vh;
-	border: 17px var(--color-red) solid;
+	border: var(--pizzabox-border);
 
 
 }
+
 
 #pizzaheader > h2 {
 	color: white;
@@ -148,17 +152,17 @@ body {
 	padding: 3vw;
 	border: none;
 	height: auto;
-  z-index: 1000; /* Ensure it stays above other content */
+  z-index: 1000;
 }
 
 #pizzaheader.sticky > h2 {
-	border: 17px var(--color-red) solid;
+	border: var(--pizzabox-border);
 	width: 90vw;
 	height: 18vh;
 	padding: 3vw 0;
 	display: flex;
-    align-items: center;
-    flex-direction: column;
+	align-items: center;
+	flex-direction: column;
 
 }
 
@@ -192,9 +196,11 @@ body {
 	transform-style: preserve-3d;
   padding-bottom: 10rem; */
 }
+
+/* 하프톤 없애려고 함
 .halftone {
   background: radial-gradient(circle at center, black 0.0025rem, transparent 0);
-}
+} */
 
 footer {
 	position: fixed; 
@@ -216,8 +222,8 @@ h1 {
 	font-family: var(--font-h1);
 	color: var(--color-red);
 	/* padding: var(--text-padding); */
-	font-display: uppercase;
-	line-height: var(--line-height-h1);
+	/* font-display: uppercase; 중복인 거 같은데 */
+	line-height: var(--line-height-title);
 	text-transform: uppercase;
 }
 
@@ -262,7 +268,8 @@ p{
 } */
 
 /* PIZZA HELL'S GATE */
-#P { top: 22vh; left: 10vw; }
+/* 살릴까 말까 고민중 */
+/* #P { top: 22vh; left: 10vw; }
 #I { top: 35vh; right: 20vw; }
 #Z1 { top: 50vh; left: 30vw; }
 #Z2 { bottom: 23vh; right: 30vw; }
@@ -275,7 +282,7 @@ p{
 	opacity: 50%;
 	position: fixed;
 	z-index: -1; 
-}
+} */
 
 /* .container {
 	display: flex;
