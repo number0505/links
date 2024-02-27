@@ -46,10 +46,13 @@ let renderBlock = (block) => {
 	// LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK 
 	if (block.class == 'Link') {
 		// console.log(block)
+		const xPosition = Math.random() * 80 - 50; // Random position between 0 and 100%
+    const yPosition = Math.random() * 50; // Random position between 0 and 100%
+
 		let linkItem =
 			`
 
-			<li class="block block-link">
+			<li class="block block-link" style="transform: translate(${xPosition}%, ${yPosition}%);">
 				<h5>
 				 ARTICLE
 				</h5>
@@ -71,7 +74,7 @@ let renderBlock = (block) => {
 		currentImageButton.classList.add('block')
 		currentImageButton.innerHTML = 
 		`
-			<li class="pepperoni slower filtered block block-image" style="transform: translate(${xPosition}%, ${yPosition}%);">
+			<li class="filtered block block-image" style="transform: translate(${xPosition}%, ${yPosition}%);">
 					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
 			</li>
 		
