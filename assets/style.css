@@ -1,7 +1,7 @@
 
 :root{
 	--font-size: 16px;
-	--font-size-h1: 8vw;
+	--font-size-h1: 7vw;
 	--font-size-h2: 6vw;
 	--font-size-h3: calc(var(--font-size) * 2);
 	--font-size-h4: calc(var(--font-size) * 1.3);
@@ -72,6 +72,7 @@ body {
 	display: flex; 
 	justify-content: center;
 	flex-direction: column;
+	align-items: center;
 	margin: 3vw auto; /* ? 이렇게 하는 거 맞나요?*/
 }
 
@@ -85,7 +86,7 @@ body {
 
 #pizzabox > h1{
 	padding: 30px 50px;
-
+	max-width: 800px;
 	font-size: var(--font-size-h1);
 	font-family: var(--font-h1);
 	color: white;
@@ -111,7 +112,7 @@ body {
 	display: flex; 
 	align-items: center; 
 	flex-direction: column;	
-	margin: 0 auto;
+	margin: 3vw auto;
 	text-align: center;
 	position: sticky;
 	justify-content: center;
@@ -139,11 +140,24 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-
-	width: 90vw;
+	width: 100vw;
 	justify-content: center;
-
+	margin: 0 auto;
+	padding: 3vw;
+	border: none;
+	height: auto;
   z-index: 1000; /* Ensure it stays above other content */
+}
+
+#pizzaheader.sticky > h2 {
+	border: 17px var(--color-red) solid;
+	width: 90vw;
+	height: 18vh;
+	padding: 3vw 0;
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+
 }
 
 

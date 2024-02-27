@@ -15,12 +15,19 @@ let channelSlug = 'pizza-by-the-york' // The “slug” is just the end of the U
 let placeChannelInfo = (data) => {
 	// Target some elements in your HTML:
 	let channelTitle = document.getElementById('channel-title')
+	let channelTitle2 = document.getElementById('channel-title-2');
 	let channelDescription = document.getElementById('channel-description')
 	// let channelCount = document.getElementById('channel-count') // 이거 시러
 	let channelLink = document.getElementById('channel-link')
 
 	// Then set their content/attributes to our data:
-	channelTitle.innerHTML = data.title
+	const arenaTitle = data.title;
+	const titleWordsArr = arenaTitle.trim().split(' ');
+	const titleWordsMidPoint = Math.floor(titleWordsArr.length / 2);
+	const firstHalf =  titleWordsArr.slice(0, titleWordsMidPoint);
+	const secondHalf = titleWordsArr.slice(titleWordsMidPoint, titleWordsArr.length);
+	channelTitle.innerHTML = firstHalf.join(' ');
+	channelTitle2.innerHTML = secondHalf.join(' ');
 	channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
 	// channelCount.innerHTML = data.length
 	channelLink.href = `https://www.are.na/channel/${channelSlug}`
@@ -44,7 +51,7 @@ let renderBlock = (block) => {
 
 			<li class="block block-link">
 				<h5>
-				 - ${block.class} -
+				 ARTICLE
 				</h5>
 				<h4>
 				<a href="${block.source.url}">${block.title}</a>
