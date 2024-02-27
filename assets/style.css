@@ -6,16 +6,17 @@
 	--font-size-fig: calc(var(--font-size) * 0.9);
 	--font-size-bq: calc(var(--font-size)*1.2);
 
-	--line-height: 160%;
+	--line-height: 150%;
+	--line-height-h1: 110%;
 	--gap: 1rem;
 
-	--font-h1:'Graduate', serif;
+	--font-h1:'Boxing-Regular', display;
 	--font-h2:'Graduate', display;
 	--font-p:'Inter', sans-serif;
 	--font-caption: 'Inter', sans-serif; /* 굵기 어떻게 바꾸는데 */
 
 	--color-black: #000000;
-	--color-red: rgba(220, 47, 28);
+	--color-red: #dc2f1c;
 
 	--background: #EFDFB6;
 
@@ -61,27 +62,37 @@ body {
 	border: 20px red solid;
 	box-sizing: border-box; 
 	display: flex; 
-	justify-content: center; 
+	align-items: center; 
 	flex-direction: column;
 	margin: 0 auto;
 }
 
+#pizzaimg{
+	width: 40vw;
+	height: auto;
+	border-radius: 0%;
 
+}
 
 #pizzabox > h1{
 	font-size: var(--font-size-h1);
 	font-family: var(--font-h1);
-	color: var(--color-red);
+	color: white;
 	/* padding: var(--text-padding); */
 	font-display: uppercase;
 	text-transform: uppercase;
 	text-align: center;
+
+	-webkit-text-stroke-color: var(--color-red);
+  -webkit-text-stroke-width: 3px;
+
 }
 
 #pizzabox > p{
 	font-family: var(--font-p);
-	padding: 30px 50px;
+	padding: 30px 50vw;
 	text-align: center;
+
 }
 
 #pizzaheader{
@@ -157,7 +168,7 @@ h1 {
 	color: var(--color-red);
 	/* padding: var(--text-padding); */
 	font-display: uppercase;
-	line-height: var(--line-height);
+	line-height: var(--line-height-h1);
 	text-transform: uppercase;
 }
 
@@ -442,6 +453,7 @@ video {
 
 iframe{
 	border-radius: 100%;
+	opacity: .5;
 }
 
 .block-video{
@@ -557,7 +569,15 @@ iframe{
        font-style: normal;
 }
 
-
+@font-face {
+  font-family: 'Boxing-Regular';
+  src: url('../fonts/Boxing-Regular.woff2') format('woff2'),
+       url('../fonts/Boxing-Regular.woff') format('woff'),
+       url('../fonts/Boxing-Regular.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Graduate&family=Inter:wght@100..900&display=swap');
 

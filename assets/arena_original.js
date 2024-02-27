@@ -6,7 +6,7 @@ document.head.appendChild(markdownIt)
 
 
 
-// Okay, Are.na stuff!    
+	// Okay, Are.na stuff!   
 let channelSlug = 'pizza-by-the-york' // The “slug” is just the end of the URL
 
 
