@@ -32,7 +32,7 @@
 	--pizzabox-maxwidth: 800px;
 	--pizzabox-margin: 4vw auto;
 	/* --pizzabox-padding: 2vw 0vh; 안쓰는거같음 */
-	--pizzabox-border: 10px var(--color-red) solid;
+	--pizzabox-border: 8px var(--color-red) solid;
 	--pizzabox-content-gap: 20px 0px;
 	--pizzabox-padding-top: 20px;
 
@@ -46,7 +46,7 @@
 	--pizzaheader-height: 18vh;
 
 
-	--footer-height: 10vh;
+	--footer-height: 8vh;
 }  
 
 /* header{
@@ -103,7 +103,7 @@ body {
 	font-family: var(--font-h1);
 	color: white;
 	/* padding: var(--text-padding); */
-	font-display: uppercase;
+	/* font-display: uppercase; xx 이거 안먹히는 거 같음 */
 	text-transform: uppercase;
 	text-align: center;
 
@@ -231,37 +231,6 @@ body {
   background: radial-gradient(circle at center, black 0.0025rem, transparent 0);
 } */
 
-footer {
-	position: fixed; 
-	right: 0; 
-	bottom: 0; 
-  z-index: 5;
-	
-	font-size: calc(var(--font-size) * .9); /* !! 푸터 폰트사이즈 변수화 */
-	font-family: var(--font-p); /* !! 푸터 폰트 변수화 */
-
-	width: 90vw;
-	height: var(--footer-height);
-
-	/* margin: 0; */
-	text-align: center;
-	padding: var(--gap);
-	border: var(--pizzabox-border);
-	box-sizing: border-box; 
-	display: flex; 
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
-	margin: var(--pizzabox-margin);
-
-
-	
-	padding: var(--gap);
-  /* width: 100%; */
-
-	background: white;
-}
-
 
 
 h1 { 
@@ -269,7 +238,7 @@ h1 {
 	font-family: var(--font-h1);
 	color: var(--color-red);
 	/* padding: var(--text-padding); */
-	/* font-display: uppercase; 중복인 거 같은데 */
+	/* font-display: uppercase; xx 중복인 거 같은데 */
 	line-height: var(--line-height-title);
 	text-transform: uppercase;
 }
@@ -626,6 +595,58 @@ iframe{
 	display: block;
 }
  */
+
+
+
+
+ footer {
+	position: fixed; 
+	right: 0; 
+	bottom: 0; 
+  z-index: 10;
+
+	width: 100vw;
+	height: auto;
+
+	margin: 0 auto;
+	/* padding: var(--gap); */
+  /* width: 100%; */
+
+	background: white;
+
+
+
+
+
+
+
+
+
+}
+
+
+#footer-pizzabox {
+	display: flex; 
+	flex-direction: column;	
+	text-align: center;
+	align-items: center; 
+	justify-content: center;
+
+	background: white;
+
+	width: 90vw;
+	height: var(--footer-height);
+	margin: var(--pizzabox-margin);
+	border: var(--pizzabox-border);	
+}
+
+#footer-pizzabox > p {
+	font-size: calc(var(--font-size) * .9); /* !! 푸터 폰트사이즈 변수화 */
+	font-family: var(--font-h3); /* !! 푸터 폰트 변수화 */
+	text-transform: uppercase;
+	color: var(--color-red);
+}
+
 
 /* TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET */
 /* TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET TABLET */
