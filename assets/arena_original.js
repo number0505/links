@@ -205,9 +205,6 @@ let renderBlock = (block) => {
 			closeButton.appendChild(image);
 			fullscreenDiv.appendChild(closeButton);
 
-			// closeButton.textContent = 'X';
-			// fullscreenDiv.appendChild(closeButton);
-
 			closeButton.addEventListener('click', function(event) {
 				event.stopPropagation(); // Prevent any parent handlers from being executed
 				console.log("Close button clicked!"); // Check if the event listener is triggered
@@ -313,10 +310,24 @@ let renderBlock = (block) => {
 			fullscreenDiv.appendChild(fullscreenVideoWrapper);
 	
 			// Create a close button (X button) for the fullscreen div
+			
+
+
+
+
+
+
 			const closeButton = document.createElement('button');
 			closeButton.classList.add('close-button');
-			closeButton.textContent = 'X';
+
+			const image = document.createElement('img');
+			image.src = 'content/xbtn.png';
+			image.alt = 'close';
+
+			closeButton.appendChild(image);
 			fullscreenDiv.appendChild(closeButton);
+
+			
 			
 			closeButton.addEventListener('click', function(event) {
 				event.stopPropagation(); // Prevent any parent handlers from being executed
@@ -329,8 +340,8 @@ let renderBlock = (block) => {
 			// Append the fullscreen div to the body
 			document.body.appendChild(fullscreenDiv);
 			const iframeBoundingRect = fullscreenVideoWrapper.getBoundingClientRect();
-			closeButton.style.left = iframeBoundingRect.right + 20 +'px';
-			closeButton.style.top = iframeBoundingRect.top - 30 + 'px';
+			closeButton.style.left = iframeBoundingRect.right - 50 +'px';
+			closeButton.style.top = iframeBoundingRect.top +10 + 'px';
 			})
 
 		} 

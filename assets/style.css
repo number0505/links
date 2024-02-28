@@ -141,6 +141,7 @@ body {
 	text-align: center;
 	font-family: var(--font-h3);
 	font-size: var(--font-size-h3);
+	line-height: var(--line-height);
 	text-transform: uppercase;
 
 }
@@ -599,7 +600,7 @@ img {
 
 iframe{
 	border-radius: 100%;
-	opacity: .5;
+	/* opacity: .5; xx 왜때문? */
 }
 
 .block-video{
