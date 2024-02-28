@@ -10,8 +10,8 @@ let channelSlug = 'pizza-by-the-york' // The “slug” is just the end of the U
 
 
 const root = document.querySelector(':root');
-const mobileXMultiplier = -20;
-const mobileYMultiplier = -50;
+const mobileXMultiplier = 20;
+const mobileYMultiplier = 40;
 const desktopXMultiplier = 100;
 const desktopYMultiplier = 100;
 
