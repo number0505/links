@@ -10,8 +10,8 @@ let channelSlug = 'pizza-by-the-york' // The “slug” is just the end of the U
 
 
 const root = document.querySelector(':root');
-const mobileXMultiplier = -30;
-const mobileYMultiplier = 50;
+const mobileXMultiplier = -20;
+const mobileYMultiplier = -50;
 const desktopXMultiplier = 100;
 const desktopYMultiplier = 100;
 
@@ -67,9 +67,9 @@ let renderBlock = (block) => {
 			`
 
 			<li class="block block-link" id="${block.id}">
-				<h5>
+				<figcaption>
 				 ARTICLE
-				</h5>
+				</figcaption>
 				<h4>
 				<a href="${block.source.url}">${block.title}</a>
 				</h4>
@@ -439,6 +439,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
+
 	});
 
 

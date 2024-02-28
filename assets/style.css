@@ -21,6 +21,7 @@
 
 	--font-p:"Inter", sans-serif;
 	--font-caption: "Inter", sans-serif; /* 굵기 어떻게 바꾸는데 */
+	--font-fig: "Oswald", sans-serif; /* xx 위에랑 합칠 수 있을듯 */
 
 	--stroke-h1: 1.8px; /**/
 	--stroke-h2: 1.6px; /**/
@@ -248,7 +249,6 @@ h2{
 	font-size: var(--font-size-h2);
 	padding-bottom: var(--font-size);
 	text-transform: uppercase;
-
 }
 
 h3{
@@ -262,15 +262,23 @@ h4{
 	font-family: var(--font-h4);
 	font-size: var(--font-size-h4);
 	text-transform: uppercase;
-
 }
-
 
 p{
 	font-family: var(--font-p);
 	/* font-size: var(--font-size); 왜때문에 폰트사이즈를 적용하면 12px이 되는거죠?*/
 	line-height: var(--line-height);
 }
+
+figcaption{
+	font-family: var(--font-fig);
+	font-size: var(--font-size-fig);
+	line-height: var(--line-height);
+	color: white;
+	opacity: 60%;
+	margin-bottom: var(--font-size-fig);
+}
+
 
 /* for text's title */
 .title{
@@ -279,11 +287,6 @@ p{
 	line-height: var(--line-height);
 }
 
-/* figcaption{
-	font-family: var(--font-p);
-	font-size: var(--font-size-fig);
-	line-height: var(--line-height);
-} */
 
 /* PIZZA HELL'S GATE */
 /* 살릴까 말까 고민중 */
