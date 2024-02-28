@@ -158,7 +158,10 @@ let renderBlock = (block) => {
 		currentTextItem.classList.add('block-txt')
 		currentTextItem.innerHTML = 
 		`
-				<h4 class="title">
+				<figcaption>
+				Text
+				</figcaption>
+				<h4 class="text-title">
 					${block.title}
 				</h4>
 		`

@@ -4,7 +4,7 @@
 	--font-size-h1: 8vh; /**/
 	--font-size-h2: 10vw; /**/
 	--font-size-h3: calc(var(--font-size) * 1.15); /**/
-	--font-size-h4: calc(var(--font-size) * 1.1);
+	--font-size-h4: calc(var(--font-size) * 1.0);
 
 	--font-size-fig: calc(var(--font-size) * 0.9);
 	--font-size-bq: calc(var(--font-size)*1.2);
@@ -12,6 +12,7 @@
 	--line-height: 150%;
 	--line-height-title: 90%;
 	--gap: 1rem; /* 피자박스 패딩에 씀 */
+	--gap-block: 20px; /* 페퍼로니 패딩 */
 
 
 	--font-h1:"Boxing-Regular", display;
@@ -45,6 +46,7 @@
 	--pizzaheader-wrapper-width: 95%;
 	--pizzaheader-h2-width: 90%;
 	--pizzaheader-height: 18vh;
+
 
 
 	--footer-height: 8vh;
@@ -261,12 +263,13 @@ h3{
 h4{
 	font-family: var(--font-h4);
 	font-size: var(--font-size-h4);
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
+	color: white;
 }
 
 p{
 	font-family: var(--font-p);
-	/* font-size: var(--font-size); 왜때문에 폰트사이즈를 적용하면 12px이 되는거죠?*/
+	/* font-size: var(--font-size); xx 왜때문에 폰트사이즈를 적용하면 12px이 되는거죠?*/
 	line-height: var(--line-height);
 }
 
@@ -277,6 +280,7 @@ figcaption{
 	color: white;
 	opacity: 60%;
 	margin-bottom: var(--font-size-fig);
+	text-transform: uppercase;
 }
 
 
@@ -315,6 +319,8 @@ figcaption{
 	margin: var(--font-size);
 } */
 
+
+/* pepperoni list */
 .blocks{
 	display: grid;
 	grid-template-columns: repeat(var(--column), minmax(0, 1fr));
@@ -323,9 +329,10 @@ figcaption{
 	margin-bottom:30vh;
 }
 
+/* pepperoni */
 .block{
-	width: 200px;
-	height: 200px;
+	width: 220px;
+	height: 220px; /* 페퍼로니 사이즈 */
 
 	position:relative;
 	border-radius: 100%;
@@ -352,25 +359,21 @@ button{
 	display: inline-flex;
 
 	flex-direction: column; /* 아이템을 세로로 배치 */
-
-	/* align-items: center;  체크필요 */
 	justify-content: center;
-	/* width: 100%;  */
-	background-color: var(--color-red);
-	color: white; 
-	border-radius: 50%;
-	text-decoration: none; /* 링크 밑줄 제거 !! */
-	/* box-shadow: 2px 2px 50px rgb(101, 11, 11); */
-
-
-	font-family: var(--font-h4); 
-	font-size: var(--font-size-h4);
-	color: #333; 
-
 	text-align: center; 
-	padding: var(--gap); 
-	margin: 20px auto; 
-	box-sizing: border-box;
+	background-color: var(--color-red);
+
+	padding: var(--gap-block); 
+
+	/* border-radius: 50%; */
+	/* box-shadow: 2px 2px 50px rgb(101, 11, 11); */
+	/* align-items: center;  !! 체크필요 */
+	/* width: 100%; !! 체크필요 */
+	text-decoration: ; /* !! 데탑버전 */
+	color: var(--color-black); /* !! 컬러췍 */
+
+	/* margin: 20px auto; !! 마진값 모바일 */
+	box-sizing: border-box; ?? 이건 뭐하는 거지
 	transition: .5s;
 }
 
@@ -528,11 +531,12 @@ img {
 	/* box-sizing: border-box;  */
 	/* box-shadow: 10px 10px 5px lightblue inset; */
 	display: flex;
+	flex-direction: column;	
 	align-items: center;
 	justify-content: center;
 }
 
-.block-txt > .title {
+.block-txt > .text-title {
 	text-align: center;
 }
 
