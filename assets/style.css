@@ -31,7 +31,6 @@
 
 	--color-black: #000000;
 	--color-red: #dc2f1c;
-	--color-hover: #fccb57; 
 
 	--pizzabox-h1-minwidth: 70vw;
 	--pizzabox-margin: 4vw auto;
@@ -375,11 +374,6 @@ figcaption{
 	
 }
 
-.block:hover{
-	width: 300px;
-	height: 300px;
-	z-index: 800;
-}
 
 button{
 	/* margin-top: .5em; */
@@ -415,21 +409,13 @@ button{
 
 }
 
-.block-link:hover{
-	color: white;
-	text-decoration: underline; 
-	cursor: pointer;
 
-}
 
 /* a{
 		cursor: pointer;
 } */
 
-a:hover{
-	color: var(--color-hover);
 
-}
 /* IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE */
 
 
@@ -790,8 +776,8 @@ iframe{
 		--font-caption: "Inter", sans-serif; /* 굵기 어떻게 바꾸는데 */
 		--font-fig: "Oswald", sans-serif; /* xx 위에랑 합칠 수 있을듯 */
 	
-		--stroke-h1: 1.8px; /**/
-		--stroke-h2: 1.6px; /**/
+		--stroke-h1: 3.5px; /**/
+		--stroke-h2: 2px; /**/
 	
 	
 		--color-black: #000000;
@@ -823,8 +809,12 @@ iframe{
 		--pepperoni-size: 270px;
 		--pepperoni-size-M: 230px;
 		--pepperoni-shadow: inset 0px 0px 70px #C22413;
+
+		--pepperoni-hover-size: 330px;
+		
 		--pepperoni-shift-right: -100px;
 		--pepperoni-shift-top: 100px;
+
 		--footer-height: 6vh;
 	
 	
@@ -834,10 +824,25 @@ iframe{
 		--fullscreen-text-width: 40vw;
 		--fullscreen-text-height: 90vh;
 
-
-
 	}
 
+	.block:hover{
+		width: var(--pepperoni-hover-size); 
+		height: var(--pepperoni-hover-size);
+		z-index: 800;
+	}
+
+	a:hover{
+		color: var(--color-hover);
+	}
+
+	.block-link:hover{
+			color: white;
+			text-decoration: underline; 
+			cursor: pointer;
+	
+	}
+	
 }
 
 
