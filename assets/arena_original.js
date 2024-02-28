@@ -230,10 +230,6 @@ let renderBlock = (block) => {
 		let attachment = block.attachment.content_type // Save us some repetition
 
 
-		// Uploaded videos!
-
-
-
 		
 		// PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF
 		// Uploaded PDFs!
@@ -242,9 +238,12 @@ let renderBlock = (block) => {
 
 			let pdfItem = 
 			`
-			<li class="block block-pdf">
-			<a href="${block.attachment.url}">
-						<img src="${block.image.large.url}" alt="${block.title}"/>
+			<li class="filtered block block-pdf">
+				<a href="${block.attachment.url}">
+					<figcaption>
+					PDF
+					</figcaption>
+					<img src="${block.image.large.url}" alt="${block.title}"/>
 				</a>
 			</li>
 			`
@@ -365,7 +364,7 @@ let renderBlock = (block) => {
 				`
 				<li id="${block.id}" class="filtered block block-video">
 					<img class="video-thumbnail" src="${ block.image.large.url}" alt="${block.title}"/>
-					<img class="video-play" src="content/play button.png"/>
+					<img class="video-play" src="content/play button_spotify.png"/>
 				</li>
 				`
 
@@ -396,7 +395,12 @@ let renderBlock = (block) => {
 			// Create a close button (X button) for the fullscreen div
 			const closeButton = document.createElement('button');
 			closeButton.classList.add('close-button');
-			closeButton.textContent = 'X';
+
+			const image = document.createElement('img');
+			image.src = 'content/xbtn.png';
+			image.alt = 'close';
+
+			closeButton.appendChild(image);
 			fullscreenDiv.appendChild(closeButton);
 			
 			closeButton.addEventListener('click', function(event) {
@@ -410,8 +414,8 @@ let renderBlock = (block) => {
 			// Append the fullscreen div to the body
 			document.body.appendChild(fullscreenDiv);
 			const iframeBoundingRect = fullscreenVideoWrapper.getBoundingClientRect();
-			closeButton.style.left = iframeBoundingRect.right + 20 +'px';
-			closeButton.style.top = iframeBoundingRect.top - 30 + 'px';
+			closeButton.style.left = iframeBoundingRect.right - 50 +'px';
+			closeButton.style.top = iframeBoundingRect.top + 10 + 'px';
 			})
 
 		}
