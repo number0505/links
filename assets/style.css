@@ -11,6 +11,7 @@
 
 	--line-height: 150%;
 	--line-height-title: 90%;
+	--line-height-body: 190%;
 	--gap: 1rem; /* 피자박스 패딩에 씀 */
 	--gap-block: 20px; /* 페퍼로니 패딩 */
 
@@ -277,7 +278,7 @@ h4{
 p{
 	font-family: var(--font-p);
 	/* font-size: var(--font-size); xx 왜때문에 폰트사이즈를 적용하면 12px이 되는거죠?*/
-	line-height: var(--line-height);
+	line-height: var(--line-height-body);
 }
 
 figcaption{
@@ -347,6 +348,7 @@ figcaption{
 	transition: .5s;
 	transform-origin: center !important; 
 
+	
 }
 
 .block:hover{
@@ -476,6 +478,23 @@ img {
 
 }
 
+/* 데탑버전
+.fullscreen-image-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	border-radius: 0%;
+	height: 100vh;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 2000; 
+	background-color: rgba(62, 61, 61, 0.774);
+	backdrop-filter: blur(10px);
+
+} */
+
 .active{
 	display: flex!important;
 }
@@ -487,13 +506,26 @@ img {
 }
 
 .fullscreen-text-container {
+	width: 90%;
+	height: 90vh;
+	overflow-y: scroll;
+	background-color: #333;
+	color:#EFDFB6;
+	padding: 2em;
+}
+
+.fullscreen-text-container > p {
+	
+}
+/* 데탑
+.fullscreen-text-container {
 	width: 40%;
 	height: 40vh;
 	overflow-y: scroll;
 	background-color: #333;
 	color:#EFDFB6;
 	padding: 2em;
-}
+} */
 
 /* fiter effect fiter effect fiter effect fiter effect */
 
@@ -542,7 +574,7 @@ img {
 	padding: var(--gap); 
 	margin: 20px auto; 
 	border-radius: 50%;
-	/* box-sizing: border-box;  */
+	/* box-sizing: border-box;  *
 	/* box-shadow: 10px 10px 5px lightblue inset; */
 	display: flex;
 	flex-direction: column;	
@@ -597,12 +629,12 @@ iframe{
 .block-pdf{
 	background-color: var(--color-red); 
 	font-size: var(--font-size-h2);
-	color: #333; 
-	filter: grayscale(1);
-	padding: var(--gap); 
-	margin: 20px auto; 
+	color: var(--color-red); 
+	padding: var(--gap-block); 
 	border-radius: 50%;
 }
+
+
 /* 내용을 표시하는 노란색 사각형 스타일 */
 /* .block-txt .block-txt_content {
 	display: none; 

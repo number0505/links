@@ -204,8 +204,8 @@ let renderBlock = (block) => {
 			// Append the fullscreen div to the body
 			document.body.appendChild(fullscreenDiv);
 			const iframeBoundingRect = fullscreenParagraph.getBoundingClientRect();
-			closeButton.style.left = iframeBoundingRect.right + 20 +'px';
-			closeButton.style.top = iframeBoundingRect.top - 30 + 'px';
+			closeButton.style.left = iframeBoundingRect.right - 40 +'px';
+			closeButton.style.top = iframeBoundingRect.top + 5 + 'px';
 
 			})
 
@@ -271,7 +271,7 @@ let renderBlock = (block) => {
 				`
 				<li id="${block.id}" class="filtered block block-video">
 					<img class="video-thumbnail" src="${ block.image.large.url}" alt="${block.title}"/>
-					<img class="video-play" src="content/play button.png"/>
+					<img id="youtube-btn" class="video-play" src="content/play button.png"/>
 				</li>
 				`
 
