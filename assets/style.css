@@ -49,7 +49,8 @@
 	--pizzaheader-height: 18vh;
 
 	--pepperoni-size: 220px;
-
+	--pepperoni-size-M: 200px;
+	--pepperoni-shadow: inset 0px 0px 40px #C22413;
 	--footer-height: 8vh;
 }  
 
@@ -73,7 +74,8 @@ body {
 }
 
 #pepperoni-shift{
-	margin-right: 50px;
+	margin-right: 70px;
+	margin-top: 50px;
 }
 
 #intro{
@@ -344,6 +346,7 @@ figcaption{
 	object-fit: cover;
 	transition: .5s;
 	transform-origin: center !important; 
+
 }
 
 .block:hover{
@@ -381,6 +384,9 @@ button{
 	box-sizing: border-box; ?? 이건 뭐하는 거지
 	/* transition: .5s; */
 	z-index: 950; /* 글자가 가려져서 */
+
+	box-shadow: var(--pepperoni-shadow)
+
 }
 
 .block-link:hover{
@@ -403,7 +409,10 @@ img {
 	border-radius: 50%;
 	z-index: 1;
 }
-
+.block-image{
+	width: var(--pepperoni-size-M);
+	height: var(--pepperoni-size-M);
+}	
 /* .filtered{
 	background-color: tomato;
 	position: relative;
@@ -428,11 +437,8 @@ img {
   transition: 1s;
 } */
 
-/* .block-image{
-	opacity: 1;
-	filter: grayscale(1);
-}	
-.block-image:hover {
+
+/* .block-image:hover {
 	opacity: 1;
 	filter: grayscale(0);
 	z-index: 10000;
@@ -571,6 +577,7 @@ iframe{
 	padding: var(--gap); 
 	margin: 20px auto; 
 	overflow: hidden;
+	
 }
 
 .video-play {
