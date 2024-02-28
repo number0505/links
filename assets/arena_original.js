@@ -5,12 +5,12 @@ markdownIt.src = 'https://cdn.jsdelivr.net/npm/markdown-it@14.0.0/dist/markdown-
 document.head.appendChild(markdownIt)
 
 
-
 	// Okay, Are.na stuff!   
 let channelSlug = 'pizza-by-the-york' // The “slug” is just the end of the URL
 
+
 const root = document.querySelector(':root');
-const mobileXMultiplier = 30;
+const mobileXMultiplier = -30;
 const mobileYMultiplier = 50;
 const desktopXMultiplier = 100;
 const desktopYMultiplier = 100;

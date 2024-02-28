@@ -1,50 +1,52 @@
 
 :root{
 	--font-size: 16px;
-	--font-size-h1: 15vw;
-	--font-size-h2: 10vw;
-	--font-size-h3: calc(var(--font-size) * 1.2);
-	--font-size-h4: calc(var(--font-size) * 1.3);
-	--font-size-pizza-h2: 10vw;
+	--font-size-h1: 8vh; /**/
+	--font-size-h2: 10vw; /**/
+	--font-size-h3: calc(var(--font-size) * 1.15); /**/
+	--font-size-h4: calc(var(--font-size) * 1.1);
 
 	--font-size-fig: calc(var(--font-size) * 0.9);
 	--font-size-bq: calc(var(--font-size)*1.2);
 
 	--line-height: 150%;
 	--line-height-title: 90%;
-	--gap: 1rem;
+	--gap: 1rem; /* 피자박스 패딩에 씀 */
 
 
-	
+	--font-h1:"Boxing-Regular", display;
+	--font-h2:"Boxing-Regular", display;
+	--font-h3:"Oswald", sans-serif;
+	--font-h4:"Inter", sans-serif;
 
-	--font-h1:'Boxing-Regular', display;
-	--font-h2:'Boxing-Regular', display;
-	--font-h3:'Inter', sans-serif;
-	--font-h4:'Inter', sans-serif;
+	--font-p:"Inter", sans-serif;
+	--font-caption: "Inter", sans-serif; /* 굵기 어떻게 바꾸는데 */
 
-	--font-p:'Inter', sans-serif;
-	--font-caption: 'Inter', sans-serif; /* 굵기 어떻게 바꾸는데 */
-
-	--stroke-h1: 2.5px;
-	--stroke-h2: 2px;
+	--stroke-h1: 1.8px; /**/
+	--stroke-h2: 1.6px; /**/
 
 
 	--color-black: #000000;
 	--color-red: #dc2f1c;
 
 	--pizzabox-maxwidth: 800px;
-	--pizzabox-padding: 2vw 0vh;
+	--pizzabox-margin: 4vw auto;
+	/* --pizzabox-padding: 2vw 0vh; 안쓰는거같음 */
 	--pizzabox-border: 10px var(--color-red) solid;
 	--pizzabox-content-gap: 20px 0px;
+	--pizzabox-padding-top: 20px;
 
 	--pizzaimg-size: 270px;
 	--background: #f7efdc;
 
 	--column: 2;
 
-	--pizzaheader-wrapper-width: 90%;
+	--pizzaheader-wrapper-width: 95%;
 	--pizzaheader-h2-width: 90%;
+	--pizzaheader-height: 18vh;
 
+
+	--footer-height: 10vh;
 }  
 
 /* header{
@@ -83,14 +85,14 @@ body {
 
 	/* margin: 0; */
 	text-align: center;
-	padding: 30px;
+	padding: var(--gap);
 	border: var(--pizzabox-border);
 	box-sizing: border-box; 
 	display: flex; 
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
-	margin: 4vw auto; /* ? 이렇게 하는 거 맞나요?*/
+	margin: var(--pizzabox-margin); /* ? 이렇게 하는 거 맞나요?*/
 }
 
 
@@ -118,20 +120,29 @@ body {
 }
 
 /* for channel discription */
-#pizzabox > h3{
+#pizzabox > aside > p {
+	color: var(--color-red);
+	padding-top: var(--pizzabox-padding-top);
+	text-align: center;
+	font-family: var(--font-h3);
+	font-size: var(--font-size-h3);
+	text-transform: uppercase;
 
+}
+
+/* p + p {
 	color: var(--color-red);
 	padding: var(--pizzabox-content-gap);
 	text-align: center;
-
-}
+	font-family: var(--font-h3);
+	font-size: var(--font-size-h3);
+}  */
 
 
 #pizzaheader{
 	display: flex; 
 	align-items: center; 
 	flex-direction: column;	
-	margin: 3vw auto;
 	text-align: center;
 	position: sticky;
 	justify-content: center;
@@ -139,7 +150,8 @@ body {
 	background: white;
 
 	width: 90vw;
-	height: 18vh;
+	height: var(--pizzaheader-height);
+	margin: var(--pizzabox-margin);
 	border: var(--pizzabox-border);
 
 }
@@ -147,15 +159,15 @@ body {
 
 #pizza-h2-wrapper {
 	color: white;
-	padding-bottom: 0px; /* 필요한지 체크할 것 */
+	/* padding-bottom: 0px; 필요한지 체크할 것 */
 
 	-webkit-text-stroke-color: var(--color-red);
   -webkit-text-stroke-width: var(--stroke-h2);
 	width: var(--pizzaheader-wrapper-width);
 	display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 #pizza-h2-wrapper > h2 {
@@ -221,17 +233,35 @@ body {
 
 footer {
 	position: fixed; 
-
-	font-size: calc(var(--font-size) * .9);
-	font-family: var(--font-p);
-
-	padding: var(--gap);
-	background: linear-gradient(to top, #D47E0A, #EFDFB6);
 	right: 0; 
 	bottom: 0; 
-  width: 100%;
   z-index: 5;
+	
+	font-size: calc(var(--font-size) * .9); /* !! 푸터 폰트사이즈 변수화 */
+	font-family: var(--font-p); /* !! 푸터 폰트 변수화 */
+
+	width: 90vw;
+	height: var(--footer-height);
+
+	/* margin: 0; */
+	text-align: center;
+	padding: var(--gap);
+	border: var(--pizzabox-border);
+	box-sizing: border-box; 
+	display: flex; 
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin: var(--pizzabox-margin);
+
+
+	
+	padding: var(--gap);
+  /* width: 100%; */
+
+	background: white;
 }
+
 
 
 h1 { 
@@ -542,10 +572,6 @@ img {
 
 /* VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO */
 
-video {
-	/* width: 100%; 
-	height: auto;  */
-}
 
 iframe{
 	border-radius: 100%;
@@ -679,5 +705,6 @@ iframe{
        font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Inter:wght@100..900&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Inter:wght@100..900&family=Oswald:wght@200..700&display=swap')
