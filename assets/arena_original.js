@@ -123,9 +123,15 @@ let renderBlock = (block) => {
 			fullscreenDiv.appendChild(fullscreenImg);
 	
 			// Create a close button (X button) for the fullscreen div
+
 			const closeButton = document.createElement('button');
 			closeButton.classList.add('close-button');
-			closeButton.textContent = 'X';
+
+			const image = document.createElement('img');
+			image.src = 'content/xbtn.png';
+			image.alt = 'close';
+
+			closeButton.appendChild(image);
 			fullscreenDiv.appendChild(closeButton);
 
 			closeButton.addEventListener('click', function(event) {
@@ -136,11 +142,12 @@ let renderBlock = (block) => {
 
 				document.body.removeChild(fullscreenDiv); // Optionally, remove the fullscreen div entirely
 			});
+
 			// Append the fullscreen div to the body
 			document.body.appendChild(fullscreenDiv);
 			const iframeBoundingRect = fullscreenImg.getBoundingClientRect();
-			closeButton.style.left = iframeBoundingRect.right + 20 +'px';
-			closeButton.style.top = iframeBoundingRect.top - 30 + 'px';
+			closeButton.style.left = iframeBoundingRect.right - 50 +'px';
+			closeButton.style.top = iframeBoundingRect.top + 10 + 'px';
 			})
 
 
@@ -190,8 +197,16 @@ let renderBlock = (block) => {
 			// Create a close button (X button) for the fullscreen div
 			const closeButton = document.createElement('button');
 			closeButton.classList.add('close-button');
-			closeButton.textContent = 'X';
+
+			const image = document.createElement('img');
+			image.src = 'content/xbtn.png';
+			image.alt = 'close';
+
+			closeButton.appendChild(image);
 			fullscreenDiv.appendChild(closeButton);
+
+			// closeButton.textContent = 'X';
+			// fullscreenDiv.appendChild(closeButton);
 
 			closeButton.addEventListener('click', function(event) {
 				event.stopPropagation(); // Prevent any parent handlers from being executed
@@ -204,8 +219,8 @@ let renderBlock = (block) => {
 			// Append the fullscreen div to the body
 			document.body.appendChild(fullscreenDiv);
 			const iframeBoundingRect = fullscreenParagraph.getBoundingClientRect();
-			closeButton.style.left = iframeBoundingRect.right - 40 +'px';
-			closeButton.style.top = iframeBoundingRect.top + 5 + 'px';
+			closeButton.style.left = iframeBoundingRect.right - 50 +'px';
+			closeButton.style.top = iframeBoundingRect.top + 10 + 'px';
 
 			})
 
