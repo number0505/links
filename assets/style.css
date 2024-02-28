@@ -2,9 +2,10 @@
 :root{
 	--font-size: 16px;
 	--font-size-h1: 15vw;
-	--font-size-h2: 6vw;
+	--font-size-h2: 10vw;
 	--font-size-h3: calc(var(--font-size) * 1.2);
 	--font-size-h4: calc(var(--font-size) * 1.3);
+	--font-size-pizza-h2: 10vw;
 
 	--font-size-fig: calc(var(--font-size) * 0.9);
 	--font-size-bq: calc(var(--font-size)*1.2);
@@ -12,6 +13,9 @@
 	--line-height: 150%;
 	--line-height-title: 90%;
 	--gap: 1rem;
+
+
+	
 
 	--font-h1:'Boxing-Regular', display;
 	--font-h2:'Boxing-Regular', display;
@@ -37,6 +41,10 @@
 	--background: #f7efdc;
 
 	--column: 2;
+
+	--pizzaheader-wrapper-width: 90%;
+	--pizzaheader-h2-width: 90%;
+
 }  
 
 /* header{
@@ -137,13 +145,22 @@ body {
 }
 
 
-#pizzaheader > h2 {
+#pizza-h2-wrapper {
 	color: white;
 	padding-bottom: 0px; /* 필요한지 체크할 것 */
 
 	-webkit-text-stroke-color: var(--color-red);
   -webkit-text-stroke-width: var(--stroke-h2);
+	width: var(--pizzaheader-wrapper-width);
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
 
+#pizza-h2-wrapper > h2 {
+	padding-bottom:0 ;
+	width: var(--pizzaheader-h2-width);
 }
 
 #pizzaheader.sticky {
@@ -159,15 +176,11 @@ body {
   z-index: 1000;
 }
 
-#pizzaheader.sticky > h2 {
+#pizzaheader.sticky > #pizza-h2-wrapper {
 	border: var(--pizzabox-border);
 	width: 90vw;
 	height: 18vh;
 	padding: 3vw 0;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-
 }
 
 
@@ -597,8 +610,12 @@ iframe{
 
 @media (min-width: 768px) {
 	:root{
+		--pizzaheader-wrapper-width: fit-content;
+		--pizzaheader-h2-width: fit-content;
+		--font-size-h2: 6vw;
 
 	}
+
 }
 
 

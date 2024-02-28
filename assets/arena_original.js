@@ -9,7 +9,13 @@ document.head.appendChild(markdownIt)
 	// Okay, Are.na stuff!   
 let channelSlug = 'pizza-by-the-york' // The “slug” is just the end of the URL
 
+const root = document.querySelector(':root');
+const mobileXMultiplier = 30;
+const mobileYMultiplier = 50;
+const desktopXMultiplier = 100;
+const desktopYMultiplier = 100;
 
+const blockIdsList = [];
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
@@ -46,13 +52,21 @@ let renderBlock = (block) => {
 	// LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK LINK 
 	if (block.class == 'Link') {
 		// console.log(block)
-		const xPosition = Math.random() * 80 - 50; // Random position between 0 and 100%
-    const yPosition = Math.random() * 50; // Random position between 0 and 100%
+
+		const mobileXPos = Math.random() * mobileXMultiplier - (mobileXMultiplier/2); // Random position between 0 and 100%
+		const mobileYPos = Math.random() * mobileYMultiplier - (mobileYMultiplier/2); // Random position between 0 and 100%
+
+		const desktopXPos = Math.random() * desktopXMultiplier - (desktopXMultiplier/2); // Random position between 0 and 100%
+		const desktopYPos = Math.random() * desktopYMultiplier - (desktopYMultiplier/2); // Random position between 0 and 100%
+		root.style.setProperty(`--${block.id}-mobile-transform`, `translate(${mobileXPos}%, ${mobileYPos}%)`);
+		root.style.setProperty(`--${block.id}-desktop-transform`, `translate(${desktopXPos}%, ${desktopYPos}%)`);
+
+		blockIdsList.push(block.id);
 
 		let linkItem =
 			`
 
-			<li class="block block-link" style="transform: translate(${xPosition}%, ${yPosition}%);">
+			<li class="block block-link" id="${block.id}">
 				<h5>
 				 ARTICLE
 				</h5>
@@ -67,14 +81,21 @@ let renderBlock = (block) => {
 	// IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE 
 	else if (block.class == 'Image') {
     // Generate random positions within the grid
-    const xPosition = Math.random() * 80 - 50; // Random position between 0 and 100%
-    const yPosition = Math.random() * 50; // Random position between 0 and 100%
+		const mobileXPos = Math.random() * mobileXMultiplier - (mobileXMultiplier/2); // Random position between 0 and 100%
+		const mobileYPos = Math.random() * mobileYMultiplier - (mobileYMultiplier/2); // Random position between 0 and 100%
+
+		const desktopXPos = Math.random() * desktopXMultiplier - (desktopXMultiplier/2); // Random position between 0 and 100%
+		const desktopYPos = Math.random() * desktopYMultiplier - (desktopYMultiplier/2); // Random position between 0 and 100%
+		root.style.setProperty(`--${block.id}-mobile-transform`, `translate(${mobileXPos}%, ${mobileYPos}%)`);
+		root.style.setProperty(`--${block.id}-desktop-transform`, `translate(${desktopXPos}%, ${desktopYPos}%)`);
+
+		blockIdsList.push(block.id);
     const currentImageButton = document.createElement('button');
 		currentImageButton.classList.add('img-button');
 		currentImageButton.classList.add('block')
 		currentImageButton.innerHTML = 
 		`
-			<li class="filtered block block-image" style="transform: translate(${xPosition}%, ${yPosition}%);">
+			<li id="${block.id}" class="filtered block block-image">
 					<img src="${block.image.large.url}" alt="${block.title} by ${block.user.full_name}">
 			</li>
 		
@@ -230,15 +251,22 @@ let renderBlock = (block) => {
 		if (embed.includes('video')) {
 			// …still up to you, but here’s an example `iframe` element:
 			 // Generate random positions within the grid
-			 const xPosition = Math.random() * 10; // Random position between 0 and 100%
-			 const yPosition = Math.random() * 30; // Random position between 0 and 100%
+			 const mobileXPos = Math.random() * mobileXMultiplier - (mobileXMultiplier/2); // Random position between 0 and 100%
+			 const mobileYPos = Math.random() * mobileYMultiplier - (mobileYMultiplier/2); // Random position between 0 and 100%
+	 
+			 const desktopXPos = Math.random() * desktopXMultiplier - (desktopXMultiplier/2); // Random position between 0 and 100%
+			 const desktopYPos = Math.random() * desktopYMultiplier - (desktopYMultiplier/2); // Random position between 0 and 100%
+	 
+			 root.style.setProperty(`--${block.id}-mobile-transform`, `translate(${mobileXPos}%, ${mobileYPos}%)`);
+			 root.style.setProperty(`--${block.id}-desktop-transform`, `translate(${desktopXPos}%, ${desktopYPos}%)`);
+	 
+			 blockIdsList.push(block.id);
 			 const currentVideoButton = document.createElement('button');
 			currentVideoButton.classList.add('video-button');
 			currentVideoButton.classList.add('block')
 			currentVideoButton.innerHTML = 
 				`
-				<li class="filtered block block-video"
-				style="transform: translate(${xPosition}%, ${yPosition}%);">
+				<li id="${block.id}" class="filtered block block-video">
 					<img class="video-thumbnail" src="${ block.image.large.url}" alt="${block.title}"/>
 					<img class="video-play" src="content/play button.png"/>
 				</li>
@@ -293,15 +321,20 @@ let renderBlock = (block) => {
 		else if (embed.includes('rich')) {
 					// …still up to you, but here’s an example `iframe` element:
 			 // Generate random positions within the grid
-			 const xPosition = Math.random() * 80; // Random position between 0 and 100%
-			 const yPosition = Math.random() * 100; // Random position between 0 and 100%
-			 const currentAudioButton = document.createElement('button');
+			 const mobileXPos = Math.random() * mobileXMultiplier - (mobileXMultiplier/2); // Random position between 0 and 100%
+			 const mobileYPos = Math.random() * mobileYMultiplier - (mobileYMultiplier/2); // Random position between 0 and 100%
+	 
+			 const desktopXPos = Math.random() * desktopXMultiplier - (desktopXMultiplier/2); // Random position between 0 and 100%
+			 const desktopYPos = Math.random() * desktopYMultiplier - (desktopYMultiplier/2); // Random position between 0 and 100%
+			root.style.setProperty(`--${block.id}-mobile-transform`, `translate(${mobileXPos}%, ${mobileYPos}%)`);
+			root.style.setProperty(`--${block.id}-desktop-transform`, `translate(${desktopXPos}%, ${desktopYPos}%)`);
+			const currentAudioButton = document.createElement('button');
+			console.log(currentAudioButton)
 			currentAudioButton.classList.add('video-button');
 			currentAudioButton.classList.add('block')
 			currentAudioButton.innerHTML = 
 				`
-				<li class="filtered block block-video"
-				style="transform: translate(${xPosition}%, ${yPosition}%);">
+				<li id="${block.id}" class="filtered block block-video">
 					<img class="video-thumbnail" src="${ block.image.large.url}" alt="${block.title}"/>
 					<img class="video-play" src="content/play button.png"/>
 				</li>
@@ -357,7 +390,27 @@ let renderBlock = (block) => {
 }
 
 
+window.addEventListener('resize', () => {
+	setBlockElsTransformValue();
+})
 
+function setBlockElsTransformValue () {
+	blockIdsList.forEach((id) => {
+		const currentBlockEl = document.getElementById(id);
+		if (window.innerWidth <= 768) {
+			// MOBILE SCREEN SIZES
+			currentBlockEl.style.transform = `var(--${id}-mobile-transform)`
+		} else {
+			// DESKTOP SCREEN SIZES
+			currentBlockEl.style.transform = `var(--${id}-desktop-transform)`
+		}
+	})
+}
+
+setTimeout(() => {
+	setBlockElsTransformValue();
+
+}, 500);
 
 // It‘s always good to credit your work:
 let renderUser = (user, container) => { // You can have multiple arguments for a function!
