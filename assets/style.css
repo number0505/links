@@ -22,8 +22,7 @@
 	--font-h4:"Inter", sans-serif;
 
 	--font-p:"Inter", sans-serif;
-	--font-caption: "Inter", sans-serif; /* 굵기 어떻게 바꾸는데 */
-	--font-fig: "Oswald", sans-serif; /* xx 위에랑 합칠 수 있을듯 */
+	--font-fig: "Oswald", sans-serif; /* 페퍼로니 위에 인덱스 */
 
 	--stroke-h1: 1.8px; /**/
 	--stroke-h2: 1.6px; /**/
@@ -69,15 +68,6 @@
 	--fullscreen-text-height: 90vh;
 }  
 
-/* header{
-	position: fixed;
-	padding: var(--gap);
-	background: linear-gradient(to bottom, #E3B67A, #EFDFB6);
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 3;
-} */
 
 body {
 	margin: 0;
@@ -108,7 +98,6 @@ body {
 	width: 90vw;
 	height: 90vh;
 
-	/* margin: 0; */
 	text-align: center;
 	padding: var(--pizzabox-padding);
 	border: var(--pizzabox-border);
@@ -131,8 +120,6 @@ body {
 	font-size: var(--font-size-h1);
 	font-family: var(--font-h1);
 	color: white;
-	/* padding: var(--text-padding); */
-	/* font-display: uppercase; xx 이거 안먹히는 거 같음 */
 	text-transform: uppercase;
 	text-align: center;
 
@@ -145,7 +132,6 @@ body {
 	width: var(--pizzaimg-size);
 	height: auto;
 	border-radius: 0%;
-	/* ? 이미지 가운데 정렬 */
 }
 
 /* for channel discription */
@@ -162,13 +148,6 @@ body {
 	width: var(--pizzabox-discription-width);
 }
 
-/* p + p {
-	color: var(--color-red);
-	padding: var(--pizzabox-h1-padding);
-	text-align: center;
-	font-family: var(--font-h3);
-	font-size: var(--font-size-h3);
-}  */
 
 
 #pizzaheader{
@@ -191,8 +170,6 @@ body {
 
 #pizza-h2-wrapper {
 	color: white;
-	/* padding-bottom: 0px; 필요한지 체크할 것 */
-
 	-webkit-text-stroke-color: var(--color-red);
   -webkit-text-stroke-width: var(--stroke-h2);
 	width: var(--pizzaheader-wrapper-width);
@@ -233,35 +210,12 @@ body {
 	flex-direction: column;
 	gap: var(--gap);
 	padding: var(--gap);
-	/* margin-top: 120vh; */
   align-items: center;
   width: 100vw;
 	height: fit-content;
 	overflow-x: hidden;
-  /* transform: translate3d(0,-100vh,0); */
-  /* transform-origin: right top;
-  overflow-y: auto;
-  overflow-x: hidden;
-  perspective: 1px;
-	transform-style: preserve-3d;
-  padding-bottom: 10rem; */
-
-
-
-  /* transform-origin: right top;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 0;
-  height: 100vw;
-  perspective: 1px;
-	transform-style: preserve-3d;
-  padding-bottom: 10rem; */
+  padding-bottom: 10rem; 
 }
-
-/* 하프톤 없애려고 함
-.halftone {
-  background: radial-gradient(circle at center, black 0.0025rem, transparent 0);
-} */
 
 
 
@@ -269,8 +223,6 @@ h1 {
 	font-size: var(--font-size-h1);
 	font-family: var(--font-h1);
 	color: var(--color-red);
-	/* padding: var(--text-padding); */
-	/* font-display: uppercase; xx 중복인 거 같은데 */
 	line-height: var(--line-height-title);
 	text-transform: uppercase;
 }
@@ -298,7 +250,6 @@ h4{
 
 p{
 	font-family: var(--font-p);
-	/* font-size: var(--font-size); xx 왜때문에 폰트사이즈를 적용하면 12px이 되는거죠?*/
 	line-height: var(--line-height-body);
 }
 
@@ -315,40 +266,7 @@ figcaption{
 }
 
 
-/* for text's title */
-.title{
-	font-family: var(--font-p);
-	font-size: var(--font-size-fig);
-	line-height: var(--line-height);
-}
 
-
-/* PIZZA HELL'S GATE */
-/* 살릴까 말까 고민중 */
-/* #P { top: 22vh; left: 10vw; }
-#I { top: 35vh; right: 20vw; }
-#Z1 { top: 50vh; left: 30vw; }
-#Z2 { bottom: 23vh; right: 30vw; }
-#A { bottom: 8vh; left: 20vw; }
-
-.letter {
-	font-size: calc(var(--font-size) * 10); 
-	font-family: var(--font-h1);
-	color: var(--color-black);
-	opacity: 50%;
-	position: fixed;
-	z-index: -1; 
-} */
-
-/* .container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	position: relative;
-	height: 100vh;
-	margin: var(--font-size);
-} */
 
 
 /* pepperoni list */
@@ -376,8 +294,6 @@ figcaption{
 
 
 button{
-	/* margin-top: .5em; */
-	/* padding: var(--gap); */
 	cursor: pointer;
 	border-radius: 100%;
 }
@@ -392,33 +308,16 @@ button{
 	background-color: var(--color-red);
 
 	padding: var(--gap-block); 
-
-	/* border-radius: 50%; */
-	/* box-shadow: 2px 2px 50px rgb(101, 11, 11); */
-	/* align-items: center;  !! 체크필요 */
-	/* width: 100%; !! 체크필요 */
-	text-decoration: ; /* !! xx ? 링크인거  데탑버전 */
 	color: var(--color-black); /* !! 컬러췍 */
 
-	/* margin: 20px auto; !! 마진값 모바일 */
-	box-sizing: border-box; ?? 이건 뭐하는 거지
-	/* transition: .5s; */
-	z-index: 950; /* 글자가 가려져서 */
+	box-sizing: border-box; 
+	z-index: 850; /* 글자가 가려져서 */
 
 	box-shadow: var(--pepperoni-shadow)
-
 }
 
 
-
-/* a{
-		cursor: pointer;
-} */
-
-
 /* IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE IMAGE */
-
-
 img {
 	width: 100%;
 	height: 100%;
@@ -430,61 +329,6 @@ img {
 	width: var(--pepperoni-size-M);
 	height: var(--pepperoni-size-M);
 }	
-/* .filtered{
-	background-color: tomato;
-	position: relative;
-}
-.filtered img {
-  filter: grayscale(1);
-  opacity: 0.5;
-} */
-/* 
-} */
-
-
-
-/* .pepperoni {
-  transform: rotate(90deg); 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40vh;
-  transform-origin: 50% 50%;
-  transform: translateZ(.1px) scale(0.9) translateX(0px) translateY(-3vh);
-  transition: 1s;
-} */
-
-
-/* .block-image:hover {
-	opacity: 1;
-	filter: grayscale(0);
-	z-index: 10000;
-
-	filter: none;
-	transform: translateZ(0) scale(1.2) translateX(-20vw) translateY(20vh);
-
-	transition: 200ms linear all;
-}	 */
-
-
-
-
-/* 데탑버전
-.fullscreen-image-container {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	border-radius: 0%;
-	height: 100vh;
-	display: none;
-	justify-content: center;
-	align-items: center;
-	z-index: 2000; 
-	background-color: rgba(62, 61, 61, 0.774);
-	backdrop-filter: blur(10px);
-
-} */
 
 .fullscreen-image-container {
 	position: fixed;
@@ -519,32 +363,12 @@ img {
 
 
 
-
-.fullscreen-text-container {
-	width: var(--fullscreen-text-width);
-	height: var(--fullscreen-text-height);
-	overflow-y: scroll;
-	background-color: white;
-	color:var(--color-black);
-	padding: 2em;
-}
-
-
-/* 데탑
-.fullscreen-text-container {
-	width: 40%;
-	height: 40vh;
-	overflow-y: scroll;
-	background-color: #333;
-	color:#EFDFB6;
-	padding: 2em;
-} */
-
-/* fiter effect fiter effect fiter effect fiter effect */
-
 .no-scroll {
 	overflow-y: hidden;
 }
+
+/* fiter effect fiter effect fiter effect fiter effect */
+
 
 .filtered {
 	background: var(--color-red);
@@ -558,21 +382,10 @@ img {
  opacity: .8;
 }
 
-/* .block-image_padding{
-	padding-top: 180px;
-} */
-/* .block-image.active .block-image_description{
-	display: block;
-} */
-
 .close-button {
 	position: fixed;
 	z-index: 3000;
 	width: 40px;
-	/* padding: 10px;  */
-	/* background-color: var(--color-red); */
-	/* color: #000;  */
-	/* font-size: var(--font-size); */
 }
 
 
@@ -583,20 +396,22 @@ img {
 	font-family: var(--font-p); 
 	font-size: var(--font-size-h4);
 	color: #333; 
-	/* display: inline-block; */
 	padding: var(--gap); 
 	margin: 20px auto; 
 	border-radius: 50%;
-	/* box-sizing: border-box;  *
-	/* box-shadow: 10px 10px 5px lightblue inset; */
 	display: flex;
 	flex-direction: column;	
 	align-items: center;
 	justify-content: center;
-
 	box-shadow: var(--pepperoni-shadow);
 }
 
+/* for text's title */
+.title{
+	font-family: var(--font-p);
+	font-size: var(--font-size-fig);
+	line-height: var(--line-height);
+}
 .block-txt > .text-title {
 	text-align: center;
 }
@@ -607,16 +422,16 @@ img {
 	line-height: var(--line-height);
 }
 
+
+
 /* VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO VIDEO */
 
 
 iframe{
 	border-radius: 100%;
-	/* opacity: .5; xx 왜때문? */
 }
 
 .block-video{
-	/* border-radius: 100%; */
 	position: relative;
 	display: flex;
   justify-content: center;
@@ -624,7 +439,6 @@ iframe{
 	padding: var(--gap); 
 	margin: 20px auto; 
 	overflow: hidden;
-	
 }
 
 .video-play {
@@ -638,8 +452,18 @@ iframe{
 
 .embedly-embed {
 	border-radius: 0 !important;
-
 }
+
+.fullscreen-text-container {
+	width: var(--fullscreen-text-width);
+	height: var(--fullscreen-text-height);
+	overflow-y: scroll;
+	background-color: white;
+	color:var(--color-black);
+	padding: 2em;
+}
+
+
 /* PDF  PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF PDF */
 
 .block-pdf{
@@ -656,12 +480,10 @@ iframe{
 	border-radius: 50%;
 	
 	padding: var(--gap-block); 
-
 }
 
 .block-pdf img {
   width: 100%; /* 이미지가 컨테이너를 꽉 채우도록 설정 */
-  /* height: auto; 이미지 비율 유지 */
   border-radius: 50%; /* 이미지가 원형이 되도록 설정 */
 	display: cover;
 	aspect-ratio: 1/1;
@@ -670,32 +492,15 @@ iframe{
 
 .block-pdf figcaption {
   position: absolute;
- 
 	top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 정확한 중앙 정렬을 위해
-  color: white; /* 텍스트 색상 변경 */s
+  transform: translate(-50%, -50%); /*정확한 중앙 정렬을 위해8/
+  color: white; /* 텍스트 색상 변경 */
 }
 
 .block-pdf a {
 	aspect-ratio: 1/1; /* 자꾸 모양이 찌그러져서 */
 }
-
-/* 내용을 표시하는 노란색 사각형 스타일 */
-/* .block-txt .block-txt_content {
-	display: none; 
-	background-color: #f4d03f;
-	padding: 20px; 
-	margin-top: 10px; 
-
-	backdrop-filter: blur(10px);
-} */
-
-/* .block-txt.active .block-txt_content{
-	display: block;
-}
- */
-
 
 
 
@@ -703,17 +508,13 @@ iframe{
 	position: fixed; 
 	right: 0; 
 	bottom: 0; 
-  z-index: 900;
+  z-index: 950;
 
 	width: 100vw;
 	height: auto;
 
 	margin: 0 auto;
-	/* padding: var(--gap); */
-  /* width: 100%; */
-
 	background: white;
-
 }
 
 
@@ -773,8 +574,7 @@ iframe{
 		--font-h4:"Inter", sans-serif;
 	
 		--font-p:"Inter", sans-serif;
-		--font-caption: "Inter", sans-serif; /* 굵기 어떻게 바꾸는데 */
-		--font-fig: "Oswald", sans-serif; /* xx 위에랑 합칠 수 있을듯 */
+		--font-fig: "Oswald", sans-serif; /* 페퍼로니 위에 인덱스 */
 	
 		--stroke-h1: 3.5px; /**/
 		--stroke-h2: 2px; /**/
@@ -840,7 +640,6 @@ iframe{
 			color: white;
 			text-decoration: underline; 
 			cursor: pointer;
-	
 	}
 	
 }
@@ -850,8 +649,6 @@ iframe{
 
 
 /* FONT FONT FONT FONT FONT FONT FONT FONT FONT FONT */ 
-
-
 
 @font-face {
   font-family: 'Anton-Regular';

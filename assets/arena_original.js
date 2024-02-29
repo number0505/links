@@ -8,7 +8,7 @@ document.head.appendChild(markdownIt)
 	// Okay, Are.na stuff!   
 let channelSlug = 'pizza-by-the-york' // The “slug” is just the end of the URL
 
-
+// Code tutor Alex Silva assisted me in randomly placing all the pepperonis and putting variables according to the screen size in JS
 const root = document.querySelector(':root');
 const mobileXMultiplier = 20;
 const mobileYMultiplier = 50;
@@ -202,6 +202,8 @@ let renderBlock = (block) => {
 			image.src = 'content/xbtn.png';
 			image.alt = 'close';
 
+			// Code tutor Dhiriti assisted me in placing x button on the content detail page
+
 			closeButton.appendChild(image);
 			fullscreenDiv.appendChild(closeButton);
 
@@ -309,9 +311,7 @@ let renderBlock = (block) => {
 			fullscreenDiv.appendChild(fullscreenVideoWrapper);
 	
 			// Create a close button (X button) for the fullscreen div
-			
-
-
+		
 
 
 
@@ -417,7 +417,6 @@ let renderBlock = (block) => {
 			closeButton.style.left = iframeBoundingRect.right - 50 +'px';
 			closeButton.style.top = iframeBoundingRect.top + 10 + 'px';
 			})
-
 		}
 	}
 }
@@ -472,7 +471,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
-
 	});
 
 
@@ -487,7 +485,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		} else {
 			header.classList.remove('sticky');
 			bodyEl.style.marginTop = '0vh';
-
 		}
 	});
 	
